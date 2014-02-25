@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="5dp" >
+    
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            
+            <TextView
+                android:id="@+id/lessonText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="@string/selectLesson"
+                android:textColor="@color/lessonText"
+                android:textSize="35sp" />
+            
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo" />
+            
+        </TableRow>
+        
+    </TableLayout>
+    
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp"
+        android:weightSum="3" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="2"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/abc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/abc"
+                android:padding="10dp"
+                android:src="@drawable/abc" />
+
+            <ImageView
+                android:id="@+id/vowels"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/vowels"
+                android:padding="10dp"
+                android:src="@drawable/vowels" />
+            
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/emotion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/emotion"
+                android:padding="10dp"
+                android:src="@drawable/emotion" />
+
+            <ImageView
+                android:id="@+id/direction"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/direction"
+                android:padding="10dp"
+                android:src="@drawable/direction" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/stories"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/stories"
+                android:padding="10dp"
+                android:src="@drawable/story" />
+
+            <ImageView
+                android:id="@+id/help"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/help"
+                android:padding="10dp"
+                android:src="@drawable/help" />
+
+        </TableRow>
+        
+    </TableLayout>
+    
+</LinearLayout>

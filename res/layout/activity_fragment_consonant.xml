@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lessonText" >
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/back_button" />
+    
+    <TextView
+        android:id="@+id/alphabetTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="3dp"
+        android:text="@string/consonant"
+        android:textColor="@color/white"
+        android:textSize="40sp" />
+    </LinearLayout>
+
+    <ViewFlipper
+        android:id="@+id/consonantFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+        
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_b" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_c" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_d" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_f" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_g" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_h" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_j" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_k" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_l" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_m" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_n" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_p" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_q" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_r" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_s" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_t" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_v" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_w" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_x" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_y" />
+        <include
+            android:id="@+id/consonant"
+            layout="@layout/activity_consonant_z" />
+        
+    </ViewFlipper>
+
+    <include layout="@layout/navigation" />
+
+</LinearLayout>

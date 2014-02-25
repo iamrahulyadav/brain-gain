@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lessonText" >
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/back_button" />
+
+        <TextView
+            android:id="@+id/alphabetTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="@string/selectLesson"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="30dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="30dp"
+        android:weightSum="2" >
+
+            <TextView
+                android:id="@+id/vowels"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/vowel"
+                android:gravity="center"
+                android:background="@color/vowelBG"
+                android:textColor="@color/white"
+                android:textSize="53sp" />
+
+            <TextView
+                android:id="@+id/consonants"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/consonant"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@color/consonantBG"
+                android:textColor="@color/white"
+                android:textSize="53sp" />
+    </TableLayout>
+
+</LinearLayout>

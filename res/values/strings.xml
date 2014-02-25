@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="subText">Kids Basic Learning Tutorials</string>
+    
+    <string name="loading">Loading...</string>
+    <string name="selectLesson">Select a Lesson</string>
+    <string name="imageDesc">ImageDescription</string>
+    <string name="alphabetTitle">Alphabet</string>
+    <string name="vowel">Vowel</string>
+    <string name="consonant">Consonants</string>
+    
+    <color name="white">#FFFFFF</color>
+    <color name="abc">#fe3675</color>
+    <color name="vowels">#0253c9</color>
+    <color name="emotion">#9f2c8b</color>
+    <color name="direction">#fdaf31</color>
+    <color name="stories">#ec3233</color>
+    <color name="help">#83e504</color>
+    <color name="lessonText">#44d1ff</color>
+    <color name="vowelBG">#ff92b3</color>
+    <color name="consonantBG">#a492ff</color>
+    
+    <string name="app_name">BrainGain</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>
