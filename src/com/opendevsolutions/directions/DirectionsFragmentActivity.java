@@ -99,7 +99,7 @@ public class DirectionsFragmentActivity extends Activity implements
 		return infromDown;
 	}
 	
-	private Animation outTpDownAnimation() {
+	private Animation outToDownAnimation() {
 		Animation outtoDown = new TranslateAnimation(
 				Animation.RELATIVE_TO_PARENT, 0.0f,
 				Animation.RELATIVE_TO_PARENT, 0.0f,
@@ -126,7 +126,7 @@ public class DirectionsFragmentActivity extends Activity implements
 				"fonts/NuevaStd.ttf");
 		lesson.setTypeface(typeface);
 
-		flipper = (ViewFlipper) findViewById(R.id.emotionFlipper);
+		flipper = (ViewFlipper) findViewById(R.id.directionFlipper);
 
 		childCount = flipper.getChildCount();
 

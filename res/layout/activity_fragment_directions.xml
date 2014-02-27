@@ -4,38 +4,53 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical" >
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/lessonText" >
-    <ImageView
-        android:id="@+id/back_button"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:src="@drawable/back_button" />
-    
-    <TextView
-        android:id="@+id/alphabetTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="3dp"
-        android:text="@string/alphabetTitle"
-        android:textColor="@color/white"
-        android:textSize="40sp" />
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/back_button" />
+
+        <TextView
+            android:id="@+id/alphabetTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="@string/alphabetTitle"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
     </LinearLayout>
 
     <ViewFlipper
-        android:id="@+id/abcFlipper"
+        android:id="@+id/directionFlipper"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" >
         
+        <include
+            android:id="@+id/direction"
+            layout="@layout/activity_directions" />
+        
+        <include
+            android:id="@+id/direction"
+            layout="@layout/activity_directions_up" />
+        <include
+            android:id="@+id/direction"
+            layout="@layout/activity_directions_left" />
+        <include
+            android:id="@+id/direction"
+            layout="@layout/activity_directions_right" />
+        <include
+            android:id="@+id/direction"
+            layout="@layout/activity_directions_down" />
         
         
     </ViewFlipper>
-
-    <include layout="@layout/navigation" />
 
 </LinearLayout>

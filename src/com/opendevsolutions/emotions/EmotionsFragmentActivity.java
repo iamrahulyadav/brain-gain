@@ -67,6 +67,28 @@ public class EmotionsFragmentActivity extends Activity implements
 		return outtoRight;
 	}
 
+	private Animation inFromUpAnimation() {
+		Animation inFromUp = new TranslateAnimation(
+				Animation.RELATIVE_TO_PARENT, 0.0f,
+				Animation.RELATIVE_TO_PARENT, 0.0f,
+				Animation.RELATIVE_TO_PARENT, +1.0f,
+				Animation.RELATIVE_TO_PARENT, 0.0f);
+		inFromUp.setDuration(300);
+		inFromUp.setInterpolator(new AccelerateInterpolator());
+		return inFromUp;
+	}
+
+	private Animation outToUpAnimation() {
+		Animation outtoUp = new TranslateAnimation(
+				Animation.RELATIVE_TO_PARENT, 0.0f,
+				Animation.RELATIVE_TO_PARENT, 0.0f,
+				Animation.RELATIVE_TO_PARENT, 0.0f,
+				Animation.RELATIVE_TO_PARENT, -1.0f);
+		outtoUp.setDuration(300);
+		outtoUp.setInterpolator(new AccelerateInterpolator());
+		return outtoUp;
+	}
+
 	@Override
 	public void onBackPressed() {
 	}
