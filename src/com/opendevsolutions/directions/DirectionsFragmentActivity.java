@@ -82,7 +82,7 @@ public class DirectionsFragmentActivity extends Activity implements
 				Animation.RELATIVE_TO_PARENT, 0.0f,
 				Animation.RELATIVE_TO_PARENT, 0.0f,
 				Animation.RELATIVE_TO_PARENT, 0.0f,
-				Animation.RELATIVE_TO_PARENT, -1.0f);
+				Animation.RELATIVE_TO_PARENT, +1.0f);
 		outtoUp.setDuration(300);
 		outtoUp.setInterpolator(new AccelerateInterpolator());
 		return outtoUp;
@@ -104,7 +104,7 @@ public class DirectionsFragmentActivity extends Activity implements
 				Animation.RELATIVE_TO_PARENT, 0.0f,
 				Animation.RELATIVE_TO_PARENT, 0.0f,
 				Animation.RELATIVE_TO_PARENT, 0.0f,
-				Animation.RELATIVE_TO_PARENT, +1.0f);
+				Animation.RELATIVE_TO_PARENT, -1.0f);
 		outtoDown.setDuration(300);
 		outtoDown.setInterpolator(new AccelerateInterpolator());
 		return outtoDown;
