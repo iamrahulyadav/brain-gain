@@ -1,8 +1,5 @@
 package com.opendevsolutions.braingain;
 
-import com.opendevsolutions.abc.ABCFragmentActivity;
-import com.opendevsolutions.vowelsandconsonants.VowelsAndConsonantsActivity;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -14,6 +11,10 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.opendevsolutions.abc.ABCFragmentActivity;
+import com.opendevsolutions.emotions.EmotionsFragmentActivity;
+import com.opendevsolutions.vowelsandconsonants.VowelsAndConsonantsActivity;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -81,7 +82,8 @@ public class MainActivity extends Activity implements OnClickListener {
 			startActivity(vowcon);
 			break;
 		case R.id.emotion:
-			Toast.makeText(this, "Emotions is currently not available!", Toast.LENGTH_SHORT).show();
+			Intent emotion = new Intent(this, EmotionsFragmentActivity.class);
+			startActivity(emotion);
 			break;
 		case R.id.direction:
 			Toast.makeText(this, "Directions is currently not available!", Toast.LENGTH_SHORT).show();

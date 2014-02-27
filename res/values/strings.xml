@@ -9,8 +9,12 @@
     <string name="alphabetTitle">Alphabet</string>
     <string name="vowel">Vowel</string>
     <string name="consonant">Consonants</string>
+    <string name="emotions">Emotions</string>
+    
+    <string name="happy">Happy</string>
     
     <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
     <color name="abc">#fe3675</color>
     <color name="vowels">#0253c9</color>
     <color name="emotion">#9f2c8b</color>
