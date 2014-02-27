@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.opendevsolutions.abc.ABCFragmentActivity;
+import com.opendevsolutions.directions.DirectionsFragmentActivity;
 import com.opendevsolutions.emotions.EmotionsFragmentActivity;
 import com.opendevsolutions.vowelsandconsonants.VowelsAndConsonantsActivity;
 
@@ -86,7 +87,8 @@ public class MainActivity extends Activity implements OnClickListener {
 			startActivity(emotion);
 			break;
 		case R.id.direction:
-			Toast.makeText(this, "Directions is currently not available!", Toast.LENGTH_SHORT).show();
+			Intent direction = new Intent(this, DirectionsFragmentActivity.class);
+			startActivity(direction);
 			break;
 		case R.id.stories:
 			Toast.makeText(this, "Stories is currently not available!", Toast.LENGTH_SHORT).show();

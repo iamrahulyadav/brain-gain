@@ -1,7 +1,5 @@
 package com.opendevsolutions.directions;
 
-import com.opendevsolutions.braingain.R;
-
 import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -13,6 +11,8 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
+
+import com.opendevsolutions.braingain.R;
 
 public class DirectionsFragmentActivity extends Activity implements
 		OnClickListener {
@@ -129,16 +129,43 @@ public class DirectionsFragmentActivity extends Activity implements
 		flipper = (ViewFlipper) findViewById(R.id.directionFlipper);
 
 		childCount = flipper.getChildCount();
-
+		
+		ImageView up = (ImageView) findViewById(R.id.directionUp);
+		ImageView down = (ImageView) findViewById(R.id.directionDown);
+		ImageView left = (ImageView) findViewById(R.id.directionLeft);
+		ImageView right = (ImageView) findViewById(R.id.directionRight);
 		ImageView back = (ImageView) findViewById(R.id.back_button);
 		
+		up.setOnClickListener(this);
+		down.setOnClickListener(this);
+		left.setOnClickListener(this);
+		right.setOnClickListener(this);
 		back.setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		
+		case R.id.directionUp:
+			flipper.setInAnimation(inFromUpAnimation());
+			flipper.setOutAnimation(outToDownAnimation());
+			flipper.setDisplayedChild(1);
+			break;
+		case R.id.directionLeft:
+			flipper.setInAnimation(inFromLeftAnimation());
+			flipper.setOutAnimation(outToRightAnimation());
+			flipper.setDisplayedChild(2);
+			break;
+		case R.id.directionRight:
+			flipper.setInAnimation(inFromRightAnimation());
+			flipper.setOutAnimation(outToLeftAnimation());
+			flipper.setDisplayedChild(3);
+			break;
+		case R.id.directionDown:
+			flipper.setInAnimation(inFromDownAnimation());
+			flipper.setOutAnimation(outToUpAnimation());
+			flipper.setDisplayedChild(4);
+			break;
 		case R.id.back_button:
 			super.onBackPressed();
 			break;

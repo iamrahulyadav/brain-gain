@@ -32,25 +32,26 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" >
-        
+
         <include
             android:id="@+id/direction"
             layout="@layout/activity_directions" />
-        
+
         <include
             android:id="@+id/direction"
             layout="@layout/activity_directions_up" />
+
         <include
             android:id="@+id/direction"
             layout="@layout/activity_directions_left" />
+
         <include
             android:id="@+id/direction"
             layout="@layout/activity_directions_right" />
+
         <include
             android:id="@+id/direction"
             layout="@layout/activity_directions_down" />
-        
-        
     </ViewFlipper>
 
 </LinearLayout>
