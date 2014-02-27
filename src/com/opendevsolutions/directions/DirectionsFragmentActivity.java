@@ -152,13 +152,13 @@ public class DirectionsFragmentActivity extends Activity implements
 			flipper.setDisplayedChild(1);
 			break;
 		case R.id.directionLeft:
-			flipper.setInAnimation(inFromLeftAnimation());
-			flipper.setOutAnimation(outToRightAnimation());
+			flipper.setInAnimation(inFromRightAnimation());
+			flipper.setOutAnimation(outToLeftAnimation());
 			flipper.setDisplayedChild(2);
 			break;
 		case R.id.directionRight:
-			flipper.setInAnimation(inFromRightAnimation());
-			flipper.setOutAnimation(outToLeftAnimation());
+			flipper.setInAnimation(inFromLeftAnimation());
+			flipper.setOutAnimation(outToRightAnimation());
 			flipper.setDisplayedChild(3);
 			break;
 		case R.id.directionDown:
