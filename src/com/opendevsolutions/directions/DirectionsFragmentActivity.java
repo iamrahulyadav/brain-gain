@@ -131,6 +131,7 @@ public class DirectionsFragmentActivity extends Activity implements
 		childCount = flipper.getChildCount();
 
 		ImageView back = (ImageView) findViewById(R.id.back_button);
+		
 		back.setOnClickListener(this);
 	}
 
