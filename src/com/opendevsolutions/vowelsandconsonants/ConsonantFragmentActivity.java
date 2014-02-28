@@ -85,11 +85,11 @@ public class ConsonantFragmentActivity extends Activity implements
 
 		childCount = flipper.getChildCount();
 
-		ImageView next = (ImageView) findViewById(R.id.arrow_right);
-		ImageView left = (ImageView) findViewById(R.id.arrow_left);
+		/*ImageView next = (ImageView) findViewById(R.id.arrow_right);
+		ImageView left = (ImageView) findViewById(R.id.arrow_left);*/
 		ImageView back = (ImageView) findViewById(R.id.back_button);
-		next.setOnClickListener(this);
-		left.setOnClickListener(this);
+		/*next.setOnClickListener(this);
+		left.setOnClickListener(this);*/
 		back.setOnClickListener(this);
 
 	}
@@ -97,7 +97,7 @@ public class ConsonantFragmentActivity extends Activity implements
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.arrow_left:
+		/*case R.id.arrow_left:
 			displayChild = flipper.getDisplayedChild();
 			if (displayChild == 0) {
 				flipper.stopFlipping();
@@ -116,7 +116,7 @@ public class ConsonantFragmentActivity extends Activity implements
 				flipper.setOutAnimation(outToLeftAnimation());
 				flipper.showNext();
 			}
-			break;
+			break;*/
 		case R.id.back_button:
 			super.onBackPressed();
 			break;

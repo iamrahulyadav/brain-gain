@@ -30,23 +30,15 @@
         android:id="@+id/vowelFlipper"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" >
+        android:layout_weight="1"
+        android:padding="10dp" >
         
         <include
             android:id="@+id/alphabet"
-            layout="@layout/activity_vowel_a" />
+            layout="@layout/activity_vowel_short" />
         <include
             android:id="@+id/alphabet"
-            layout="@layout/activity_vowel_e" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_vowel_i" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_vowel_o" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_vowel_u" />
+            layout="@layout/activity_vowel_long" />
         
     </ViewFlipper>
 

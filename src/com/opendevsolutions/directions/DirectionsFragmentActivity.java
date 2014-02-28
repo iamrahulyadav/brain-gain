@@ -16,8 +16,6 @@ import com.opendevsolutions.braingain.R;
 
 public class DirectionsFragmentActivity extends Activity implements
 		OnClickListener {
-	private int displayChild;
-	private int childCount;
 	private ViewFlipper flipper;
 	public static int display;
 
@@ -127,8 +125,6 @@ public class DirectionsFragmentActivity extends Activity implements
 		lesson.setTypeface(typeface);
 
 		flipper = (ViewFlipper) findViewById(R.id.directionFlipper);
-
-		childCount = flipper.getChildCount();
 		
 		ImageView up = (ImageView) findViewById(R.id.directionUp);
 		ImageView down = (ImageView) findViewById(R.id.directionDown);

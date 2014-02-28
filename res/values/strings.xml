@@ -22,8 +22,8 @@
     <color name="stories">#ec3233</color>
     <color name="help">#83e504</color>
     <color name="lessonText">#44d1ff</color>
-    <color name="vowelBG">#ff92b3</color>
-    <color name="consonantBG">#a492ff</color>
+    <color name="vowelBG">#0060f8</color>
+    <color name="consonantBG">#ff92b3</color>
     
     <string name="app_name">BrainGain</string>
     <string name="action_settings">Settings</string>
