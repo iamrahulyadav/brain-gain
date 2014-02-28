@@ -10,6 +10,12 @@
     <string name="vowel">Vowel</string>
     <string name="consonant">Consonants</string>
     <string name="emotions">Emotions</string>
+    <string name="direction">Direction</string>
+    
+    <string name="leftDirection">Michael is pointing Left.</string>
+    <string name="rightDirection">Michael is pointing Right.</string>
+    <string name="intro_conso">The pink colored boxes are consonants</string>
+    <string name="intro_vow">The blue colored boxes are vowels</string>
     
     <string name="happy">Happy</string>
     

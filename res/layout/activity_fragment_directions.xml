@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="3dp"
-            android:text="@string/alphabetTitle"
+            android:text="@string/direction"
             android:textColor="@color/white"
             android:textSize="40sp" />
     </LinearLayout>

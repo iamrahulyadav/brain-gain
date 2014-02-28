@@ -4,26 +4,27 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical" >
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/lessonText" >
-    <ImageView
-        android:id="@+id/back_button"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:src="@drawable/back_button" />
-    
-    <TextView
-        android:id="@+id/alphabetTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="3dp"
-        android:text="@string/alphabetTitle"
-        android:textColor="@color/white"
-        android:textSize="40sp" />
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/back_button" />
+
+        <TextView
+            android:id="@+id/alphabetTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="@string/alphabetTitle"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
     </LinearLayout>
 
     <ViewFlipper
@@ -31,85 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" >
-        
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_a" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_b" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_c" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_d" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_e" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_f" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_g" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_h" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_i" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_j" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_k" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_l" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_m" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_n" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_o" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_p" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_q" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_r" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_s" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_t" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_u" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_v" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_w" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_x" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_y" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_alphabet_z" />
+
         
     </ViewFlipper>
 

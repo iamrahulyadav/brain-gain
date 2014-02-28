@@ -10,12 +10,15 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.opendevsolutions.braingain.R;
 
 public class DirectionsFragmentActivity extends Activity implements
 		OnClickListener {
+
+	private int displayChild;
 	private ViewFlipper flipper;
 	public static int display;
 
@@ -63,7 +66,7 @@ public class DirectionsFragmentActivity extends Activity implements
 		outtoRight.setInterpolator(new AccelerateInterpolator());
 		return outtoRight;
 	}
-	
+
 	private Animation inFromUpAnimation() {
 		Animation infromUp = new TranslateAnimation(
 				Animation.RELATIVE_TO_PARENT, 0.0f,
@@ -74,7 +77,7 @@ public class DirectionsFragmentActivity extends Activity implements
 		infromUp.setInterpolator(new AccelerateInterpolator());
 		return infromUp;
 	}
-	
+
 	private Animation outToUpAnimation() {
 		Animation outtoUp = new TranslateAnimation(
 				Animation.RELATIVE_TO_PARENT, 0.0f,
@@ -85,7 +88,7 @@ public class DirectionsFragmentActivity extends Activity implements
 		outtoUp.setInterpolator(new AccelerateInterpolator());
 		return outtoUp;
 	}
-	
+
 	private Animation inFromDownAnimation() {
 		Animation infromDown = new TranslateAnimation(
 				Animation.RELATIVE_TO_PARENT, 0.0f,
@@ -96,7 +99,7 @@ public class DirectionsFragmentActivity extends Activity implements
 		infromDown.setInterpolator(new AccelerateInterpolator());
 		return infromDown;
 	}
-	
+
 	private Animation outToDownAnimation() {
 		Animation outtoDown = new TranslateAnimation(
 				Animation.RELATIVE_TO_PARENT, 0.0f,
@@ -111,9 +114,7 @@ public class DirectionsFragmentActivity extends Activity implements
 	@Override
 	public void onBackPressed() {
 	}
-	
-	
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -125,18 +126,22 @@ public class DirectionsFragmentActivity extends Activity implements
 		lesson.setTypeface(typeface);
 
 		flipper = (ViewFlipper) findViewById(R.id.directionFlipper);
-		
+
 		ImageView up = (ImageView) findViewById(R.id.directionUp);
 		ImageView down = (ImageView) findViewById(R.id.directionDown);
 		ImageView left = (ImageView) findViewById(R.id.directionLeft);
 		ImageView right = (ImageView) findViewById(R.id.directionRight);
 		ImageView back = (ImageView) findViewById(R.id.back_button);
-		
+		ImageView home_l = (ImageView) findViewById(R.id.home_button_left);
+		ImageView home_r = (ImageView) findViewById(R.id.home_button_right);
+
 		up.setOnClickListener(this);
 		down.setOnClickListener(this);
 		left.setOnClickListener(this);
 		right.setOnClickListener(this);
 		back.setOnClickListener(this);
+		home_l.setOnClickListener(this);
+		home_r.setOnClickListener(this);
 	}
 
 	@Override
@@ -148,13 +153,13 @@ public class DirectionsFragmentActivity extends Activity implements
 			flipper.setDisplayedChild(1);
 			break;
 		case R.id.directionLeft:
-			flipper.setInAnimation(inFromRightAnimation());
-			flipper.setOutAnimation(outToLeftAnimation());
+			flipper.setInAnimation(inFromLeftAnimation());
+			flipper.setOutAnimation(outToRightAnimation());
 			flipper.setDisplayedChild(2);
 			break;
 		case R.id.directionRight:
-			flipper.setInAnimation(inFromLeftAnimation());
-			flipper.setOutAnimation(outToRightAnimation());
+			flipper.setInAnimation(inFromRightAnimation());
+			flipper.setOutAnimation(outToLeftAnimation());
 			flipper.setDisplayedChild(3);
 			break;
 		case R.id.directionDown:
@@ -162,10 +167,19 @@ public class DirectionsFragmentActivity extends Activity implements
 			flipper.setOutAnimation(outToUpAnimation());
 			flipper.setDisplayedChild(4);
 			break;
+		case R.id.home_button_right:
+			flipper.setInAnimation(inFromLeftAnimation());
+			flipper.setOutAnimation(outToRightAnimation());
+			flipper.setDisplayedChild(0);
+			break;
+		case R.id.home_button_left:
+			flipper.setInAnimation(inFromRightAnimation());
+			flipper.setOutAnimation(outToLeftAnimation());
+			flipper.setDisplayedChild(0);
+			break;
 		case R.id.back_button:
 			super.onBackPressed();
 			break;
 		}
 	}
-
 }

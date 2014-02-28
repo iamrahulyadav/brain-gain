@@ -35,6 +35,10 @@
         
         <include
             android:id="@+id/alphabet"
+            layout="@layout/activity_vowel" />
+        
+        <include
+            android:id="@+id/alphabet"
             layout="@layout/activity_vowel_short" />
         <include
             android:id="@+id/alphabet"

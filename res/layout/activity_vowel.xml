@@ -9,18 +9,17 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="3"
-        android:text="@string/intro_conso"
+        android:text="@string/intro_vow"
         android:textColor="@color/black"
         android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ImageView
-        android:id="@+id/consonant"
+        android:id="@+id/vowel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="3"
         android:padding="10dp"
+        android:layout_weight="1"
         android:src="@drawable/consonants" />
 
 </LinearLayout>
