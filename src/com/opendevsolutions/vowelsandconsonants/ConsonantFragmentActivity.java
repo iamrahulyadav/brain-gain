@@ -1,7 +1,5 @@
 package com.opendevsolutions.vowelsandconsonants;
 
-import com.opendevsolutions.braingain.R;
-
 import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -13,6 +11,8 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
+
+import com.opendevsolutions.braingain.R;
 
 public class ConsonantFragmentActivity extends Activity implements
 		OnClickListener {

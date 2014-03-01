@@ -24,6 +24,9 @@
         </activity>
         <activity android:name="com.opendevsolutions.braingain.MainActivity"></activity>
         <activity android:name="com.opendevsolutions.abc.ABCFragmentActivity"></activity>
+        <activity android:name="com.opendevsolutions.abc.ABCFirstFragmentActivity"></activity>
+        <activity android:name="com.opendevsolutions.abc.ABCSecondFragmentActivity"></activity>
+        <activity android:name="com.opendevsolutions.abc.ABCQuizActivity"></activity>
         <activity android:name="com.opendevsolutions.directions.DirectionsFragmentActivity"></activity>
         <activity android:name="com.opendevsolutions.emotions.EmotionsFragmentActivity"></activity>
         <activity android:name="com.opendevsolutions.vowelsandconsonants.VowelsAndConsonantsActivity"></activity>
@@ -31,6 +34,7 @@
         <activity android:name="com.opendevsolutions.stories.StoriesFragmentActivity"></activity>
         <activity android:name="com.opendevsolutions.vowelsandconsonants.VowelFragmentActivity"></activity>
         <activity android:name="com.opendevsolutions.vowelsandconsonants.ConsonantFragmentActivity"></activity>
+        
     </application>
 
 </manifest>

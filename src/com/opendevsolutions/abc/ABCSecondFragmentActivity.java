@@ -1,4 +1,6 @@
-package com.opendevsolutions.emotions;
+package com.opendevsolutions.abc;
+
+import com.opendevsolutions.braingain.R;
 
 import android.app.Activity;
 import android.graphics.Typeface;
@@ -12,11 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
-import com.opendevsolutions.braingain.R;
-
-public class EmotionsFragmentActivity extends Activity implements
+public class ABCSecondFragmentActivity extends Activity implements
 		OnClickListener {
-
 	private int displayChild;
 	private int childCount;
 	private ViewFlipper flipper;
@@ -67,28 +66,6 @@ public class EmotionsFragmentActivity extends Activity implements
 		return outtoRight;
 	}
 
-	private Animation inFromUpAnimation() {
-		Animation inFromUp = new TranslateAnimation(
-				Animation.RELATIVE_TO_PARENT, 0.0f,
-				Animation.RELATIVE_TO_PARENT, 0.0f,
-				Animation.RELATIVE_TO_PARENT, +1.0f,
-				Animation.RELATIVE_TO_PARENT, 0.0f);
-		inFromUp.setDuration(300);
-		inFromUp.setInterpolator(new AccelerateInterpolator());
-		return inFromUp;
-	}
-
-	private Animation outToUpAnimation() {
-		Animation outtoUp = new TranslateAnimation(
-				Animation.RELATIVE_TO_PARENT, 0.0f,
-				Animation.RELATIVE_TO_PARENT, 0.0f,
-				Animation.RELATIVE_TO_PARENT, 0.0f,
-				Animation.RELATIVE_TO_PARENT, -1.0f);
-		outtoUp.setDuration(300);
-		outtoUp.setInterpolator(new AccelerateInterpolator());
-		return outtoUp;
-	}
-
 	@Override
 	public void onBackPressed() {
 	}
@@ -96,20 +73,21 @@ public class EmotionsFragmentActivity extends Activity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_fragment_emotion);
+		setContentView(R.layout.activity_fragment_alphabet_two);
 
 		TextView lesson = (TextView) findViewById(R.id.alphabetTitle);
 		Typeface typeface = Typeface.createFromAsset(getAssets(),
 				"fonts/NuevaStd.ttf");
 		lesson.setTypeface(typeface);
 
-		flipper = (ViewFlipper) findViewById(R.id.emotionFlipper);
+		flipper = (ViewFlipper) findViewById(R.id.abcFlipperTwo);
 
 		childCount = flipper.getChildCount();
 
 		ImageView next = (ImageView) findViewById(R.id.arrow_right);
 		ImageView left = (ImageView) findViewById(R.id.arrow_left);
 		ImageView back = (ImageView) findViewById(R.id.back_button);
+
 		next.setOnClickListener(this);
 		left.setOnClickListener(this);
 		back.setOnClickListener(this);

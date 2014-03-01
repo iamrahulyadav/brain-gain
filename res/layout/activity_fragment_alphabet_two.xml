@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lessonText" >
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/back_button" />
+
+        <TextView
+            android:id="@+id/alphabetTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="@string/alphabetTitle"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+    </LinearLayout>
+
+    <ViewFlipper
+        android:id="@+id/abcFlipperTwo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <include layout="@layout/activity_alphabet_n"/>
+        <include layout="@layout/activity_alphabet_o"/>
+        <include layout="@layout/activity_alphabet_p"/>
+        <include layout="@layout/activity_alphabet_q"/>
+        <include layout="@layout/activity_alphabet_r"/>
+        <include layout="@layout/activity_alphabet_s"/>
+        <include layout="@layout/activity_alphabet_t"/>
+        <include layout="@layout/activity_alphabet_u"/>
+        <include layout="@layout/activity_alphabet_u"/>
+        <include layout="@layout/activity_alphabet_w"/>
+        <include layout="@layout/activity_alphabet_x"/>
+        <include layout="@layout/activity_alphabet_y"/>
+        <include layout="@layout/activity_alphabet_z"/>
+        <include layout="@layout/activity_abc_quiz"/>
+        
+    </ViewFlipper>
+
+    <include layout="@layout/navigation" />
+
+</LinearLayout>

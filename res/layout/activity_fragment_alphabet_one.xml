@@ -28,11 +28,25 @@
     </LinearLayout>
 
     <ViewFlipper
-        android:id="@+id/abcFlipper"
+        android:id="@+id/abcFlipperOne"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" >
 
+        <include layout="@layout/activity_alphabet_a"/>
+        <include layout="@layout/activity_alphabet_b"/>
+        <include layout="@layout/activity_alphabet_c"/>
+        <include layout="@layout/activity_alphabet_d"/>
+        <include layout="@layout/activity_alphabet_e"/>
+        <include layout="@layout/activity_alphabet_f"/>
+        <include layout="@layout/activity_alphabet_g"/>
+        <include layout="@layout/activity_alphabet_h"/>
+        <include layout="@layout/activity_alphabet_i"/>
+        <include layout="@layout/activity_alphabet_j"/>
+        <include layout="@layout/activity_alphabet_k"/>
+        <include layout="@layout/activity_alphabet_l"/>
+        <include layout="@layout/activity_alphabet_m"/>
+        <include layout="@layout/activity_abc_quiz"/>
         
     </ViewFlipper>
 

@@ -1,6 +1,7 @@
-package com.opendevsolutions.emotions;
+package com.opendevsolutions.abc;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -14,14 +15,16 @@ import android.widget.ViewFlipper;
 
 import com.opendevsolutions.braingain.R;
 
-public class EmotionsFragmentActivity extends Activity implements
+public class ABCFirstFragmentActivity extends Activity implements
 		OnClickListener {
 
 	private int displayChild;
 	private int childCount;
 	private ViewFlipper flipper;
 	public static int display;
-
+	
+	ABCQuizActivity quiz_act = new ABCQuizActivity();
+	
 	private Animation inFromRightAnimation() {
 
 		Animation inFromRight = new TranslateAnimation(
@@ -67,28 +70,6 @@ public class EmotionsFragmentActivity extends Activity implements
 		return outtoRight;
 	}
 
-	private Animation inFromUpAnimation() {
-		Animation inFromUp = new TranslateAnimation(
-				Animation.RELATIVE_TO_PARENT, 0.0f,
-				Animation.RELATIVE_TO_PARENT, 0.0f,
-				Animation.RELATIVE_TO_PARENT, +1.0f,
-				Animation.RELATIVE_TO_PARENT, 0.0f);
-		inFromUp.setDuration(300);
-		inFromUp.setInterpolator(new AccelerateInterpolator());
-		return inFromUp;
-	}
-
-	private Animation outToUpAnimation() {
-		Animation outtoUp = new TranslateAnimation(
-				Animation.RELATIVE_TO_PARENT, 0.0f,
-				Animation.RELATIVE_TO_PARENT, 0.0f,
-				Animation.RELATIVE_TO_PARENT, 0.0f,
-				Animation.RELATIVE_TO_PARENT, -1.0f);
-		outtoUp.setDuration(300);
-		outtoUp.setInterpolator(new AccelerateInterpolator());
-		return outtoUp;
-	}
-
 	@Override
 	public void onBackPressed() {
 	}
@@ -96,28 +77,46 @@ public class EmotionsFragmentActivity extends Activity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_fragment_emotion);
-
+		setContentView(R.layout.activity_fragment_alphabet_one);
+		
 		TextView lesson = (TextView) findViewById(R.id.alphabetTitle);
 		Typeface typeface = Typeface.createFromAsset(getAssets(),
 				"fonts/NuevaStd.ttf");
 		lesson.setTypeface(typeface);
 
-		flipper = (ViewFlipper) findViewById(R.id.emotionFlipper);
+		flipper = (ViewFlipper) findViewById(R.id.abcFlipperOne);
 
 		childCount = flipper.getChildCount();
 
 		ImageView next = (ImageView) findViewById(R.id.arrow_right);
 		ImageView left = (ImageView) findViewById(R.id.arrow_left);
 		ImageView back = (ImageView) findViewById(R.id.back_button);
+		
+		TextView yes = (TextView) findViewById(R.id.yes);
+		TextView no = (TextView) findViewById(R.id.no);
+
 		next.setOnClickListener(this);
 		left.setOnClickListener(this);
 		back.setOnClickListener(this);
+		
+		yes.setOnClickListener(this);
+		no.setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
+		
+		case R.id.yes:
+			quiz_act.setPart(true);
+			Intent quiz_1 = new Intent(this, ABCQuizActivity.class);
+			startActivity(quiz_1);
+			break;
+		case R.id.no:
+			flipper.setInAnimation(inFromLeftAnimation());
+			flipper.setOutAnimation(outToRightAnimation());
+			flipper.setDisplayedChild(0);
+			break;
 		case R.id.arrow_left:
 			displayChild = flipper.getDisplayedChild();
 			if (displayChild == 0) {
