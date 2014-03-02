@@ -4,26 +4,27 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical" >
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/lessonText" >
-    <ImageView
-        android:id="@+id/back_button"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:src="@drawable/back_button" />
-    
-    <TextView
-        android:id="@+id/alphabetTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="3dp"
-        android:text="@string/vowel"
-        android:textColor="@color/white"
-        android:textSize="40sp" />
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/back_button" />
+
+        <TextView
+            android:id="@+id/alphabetTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="@string/vowel"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
     </LinearLayout>
 
     <ViewFlipper
@@ -32,18 +33,14 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:padding="10dp" >
-        
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_vowel" />
-        
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_vowel_short" />
-        <include
-            android:id="@+id/alphabet"
-            layout="@layout/activity_vowel_long" />
-        
+
+        <include layout="@layout/activity_vowel" />
+
+        <include layout="@layout/activity_vowel_short" />
+
+        <include layout="@layout/activity_vowel_long" />
+
+        <include layout="@layout/activity_abc_quiz" />
     </ViewFlipper>
 
     <include layout="@layout/navigation" />
