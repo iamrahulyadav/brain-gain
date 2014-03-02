@@ -13,6 +13,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -25,10 +26,10 @@ import com.opendevsolutions.quiz.lib.XmlParser;
 
 public class ABCQuizActivity extends Activity implements OnClickListener {
 
-	public QuizItems qis = new QuizItems();
+	public QuizItems quiz = new QuizItems();
 	public QuizEvaluation eval = new QuizEvaluation();
-	public static int currentItem = 0;
-	public ArrayList<String> choices = new ArrayList<String>();
+	public static int itemIndex = 0;
+	public ArrayList<String> choice = new ArrayList<String>();
 
 	final Context context = this;
 
@@ -37,16 +38,16 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 	public TextView tvQ;
 
 	private static String filename;
-	private static String dialogTitle = "Alpabhet Quiz Results";
-	int itemsLimit = 5;
-	int correctAnswers = 0;
+	int itemLimit = 5;
+	int cAnswers = 0;
 
 	public AlertDialog resultDialog;
 	public AlertDialog.Builder resultBuilder;
 
 	@Override
 	public void onBackPressed() {
-
+		Toast.makeText(this, "Please Complete the Quiz", Toast.LENGTH_SHORT)
+				.show();
 	}
 
 	@Override
@@ -58,12 +59,29 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 		setQuestions();
 		tvQ = (TextView) findViewById(R.id.quizQuestion);
 		setLayout();
+		Button ok = (Button) findViewById(R.id.btn_next);
+		ok.setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
-		Toast.makeText(this, "Please finish the Quiz first.", Toast.LENGTH_LONG)
-				.show();
+		switch (v.getId()) {
+		case R.id.btn_next:
+			String selected = getChoiceFromRadioButton();
+			String answer = quiz.getAnswer(itemIndex);
+
+			if (selected.equals(answer)) {
+				cAnswers++;
+			}
+
+			if ((itemIndex + 1) < itemLimit) {
+				rgrp.removeAllViews();
+				itemIndex++;
+				setLayout();
+			} else {
+				showResult();
+			}
+		}
 	}
 
 	private String getChoiceFromRadioButton() {
@@ -77,18 +95,18 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 
 	@SuppressWarnings("unchecked")
 	private void addRadioButtons() {
-		choices = (ArrayList<String>) qis.getItemChoices(currentItem);
-		rbtn = new RadioButton[choices.size()];
-		for (int i = 0; i < choices.size(); i++) {
+		choice = (ArrayList<String>) quiz.getItemChoices(itemIndex);
+		rbtn = new RadioButton[choice.size()];
+		for (int i = 0; i < choice.size(); i++) {
 			rbtn[i] = new RadioButton(this);
 			rgrp.addView(rbtn[i]);
-			rbtn[i].setText(choices.get(i));
+			rbtn[i].setText(choice.get(i));
 		}
 	}
 
 	public void setQuestions() {
 		XmlParser parser = new XmlParser();
-		String xml = parser.getXmlFromAssets(filename, getApplicationContext());
+		String xml = parser.getXmlFromAssets(getFileName(), getApplicationContext());
 		Document doc = parser.getDomElement(xml);
 		NodeList nl = doc.getElementsByTagName("question");
 		for (int i = 0; i < nl.getLength(); i++) {
@@ -96,30 +114,39 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 			String question = parser.getValue(e, "text");
 			ArrayList<String> choices = parser.getAllValues(e, "choice");
 			String answer = parser.getValue(e, "answer");
-			qis.addItem(question, choices, answer);
+			quiz.addItem(question, choices, answer);
 		}
-		qis.setNumberOfItems(itemsLimit);
-		qis.shuffle();
+		quiz.setNumberOfItems(itemLimit);
+		quiz.shuffle();
 	}
 
 	private void setLayout() {
-		tvQ.setText((currentItem + 1) + ") " + qis.getQuestion(currentItem));
+		tvQ.setText((itemIndex + 1) + ") " + quiz.getQuestion(itemIndex));
 		this.addRadioButtons();
+	}
+
+	public void backToMenu() {
+		super.onBackPressed();
 	}
 
 	public void showResult() {
 		resultBuilder = new AlertDialog.Builder(this);
 		resultBuilder.setTitle("SCORE");
 		resultBuilder.setIcon(R.drawable.ic_launcher);
-		resultBuilder.setMessage("Score: " + correctAnswers + "/" + itemsLimit
-				+ "\n" + eval.evaluate(correctAnswers, itemsLimit));
+		resultBuilder.setMessage("Score: " + cAnswers + "/" + itemLimit
+				+ "\n" + eval.evaluate(cAnswers, itemLimit));
 		resultBuilder.setPositiveButton("OK",
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						
+						resultDialog.dismiss();
+						backToMenu();
+						cAnswers = 0;
+						ABCQuizActivity.this.finish();
 					}
 				});
+		resultDialog = resultBuilder.create();
+		resultDialog.show();
 
 	}
 

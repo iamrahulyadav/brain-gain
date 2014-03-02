@@ -27,6 +27,7 @@ public class ABCSecondFragmentActivity extends Activity implements
 	SoundPool sp;
 	int n, o, p, q, r, s, t, u, v, w, x, y, z = 0;
 	private static View textViews;
+	private static String alpha_second = "alphabet_second.xml";
 
 	private Animation inFromRightAnimation() {
 
@@ -219,8 +220,10 @@ public class ABCSecondFragmentActivity extends Activity implements
 			break;
 		case R.id.yes:
 			changeTextBG(mView);
+			quiz_act.setFileName(alpha_second);
 			Intent quiz = new Intent(this, ABCQuizActivity.class);
 			startActivity(quiz);
+			this.finish();
 			break;
 		case R.id.no:
 			textViews = mView;

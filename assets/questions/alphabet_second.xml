@@ -1,0 +1,82 @@
+<questions>
+    <question>
+        <text>How many alphabets are there all in all?</text>
+        <choice>24</choice>
+        <choice>25</choice>
+        <choice>26</choice>
+        <answer>26</answer>
+    </question>
+    <question>
+        <text>What letter comes after the letter P?</text>
+        <choice>O</choice>
+        <choice>Q</choice>
+        <choice>S</choice>
+        <choice>M</choice>
+        <answer>Q</answer>
+    </question>
+    <question>
+        <text>Which of the following words does not have a letter v?</text>
+        <choice>Salve</choice>
+        <choice>Cultivate</choice>
+        <choice>Maveric</choice>
+        <choice>Transcript</choice>
+        <answer>Transcript</answer>
+    </question>
+    <question>
+        <text>Each word is a name of an animal except for one. Which on is it?</text>
+        <choice>Zebra</choice>
+        <choice>Quetzal</choice>
+        <choice>Tapir</choice>
+        <choice>Vulture</choice>
+        <choice>None</choice>
+        <answer>None</answer>
+    </question>
+    <question>
+        <text>Which animal starts with the letter Z?</text>
+        <choice>Zebu</choice>
+        <choice>Ziggurat</choice>
+        <choice>Zingiest</choice>
+        <choice>Zeolitic</choice>
+        <answer>Zebu</answer>
+    </question>
+    <question>
+        <text>What letter is 4 letters before letter S?</text>
+        <choice>R</choice>
+        <choice>N</choice>
+        <choice>O</choice>
+        <choice>None</choice>
+        <answer>O</answer>
+    </question>
+    <question>
+        <text>How many letter U in the word Ultramagnanimous</text>
+        <choice>3</choice>
+        <choice>4</choice>
+        <choice>1</choice>
+        <choice>2</choice>
+        <answer>2</answer>
+    </question>
+    <question>
+        <text>What is the name of a fish disney main character?</text>
+        <choice>Ariel</choice>
+        <choice>Dory</choice>
+        <choice>Flounder</choice>
+        <choice>Nemo</choice>
+        <answer>Nemo</answer>
+    </question>
+    <question>
+        <text>What do you use to dry your self after you shower that starts with the letter T?</text>
+        <choice>Tampoon</choice>
+        <choice>Tangerine</choice>
+        <choice>Tangelo</choice>
+        <choice>Towels</choice>
+        <answer>Towels</answer>
+    </question>
+    <question>
+        <text>How many letters are there in the word Flamboyant?</text>
+        <choice>10</choice>
+        <choice>9</choice>
+        <choice>12</choice>
+        <choice>8</choice>
+        <answer>9</answer>
+    </question>
+</questions>

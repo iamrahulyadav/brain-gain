@@ -225,6 +225,7 @@ public class ABCFirstFragmentActivity extends Activity implements
 			quiz_act.setFileName(alpha_first);
 			Intent quiz = new Intent(this, ABCQuizActivity.class);
 			startActivity(quiz);
+			this.finish();
 			break;
 		case R.id.no:
 			textViews = mView;
