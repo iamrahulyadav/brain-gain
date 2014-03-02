@@ -41,7 +41,7 @@
         <include layout="@layout/activity_alphabet_s"/>
         <include layout="@layout/activity_alphabet_t"/>
         <include layout="@layout/activity_alphabet_u"/>
-        <include layout="@layout/activity_alphabet_u"/>
+        <include layout="@layout/activity_alphabet_v"/>
         <include layout="@layout/activity_alphabet_w"/>
         <include layout="@layout/activity_alphabet_x"/>
         <include layout="@layout/activity_alphabet_y"/>

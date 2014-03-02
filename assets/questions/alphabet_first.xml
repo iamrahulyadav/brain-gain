@@ -1,0 +1,27 @@
+<questions>
+    <question>
+        <text>Which of this words starts with the letter A?</text>
+        <choice>Goat</choice>
+        <choice>Aardvark</choice>
+        <choice>Boat</choice>
+        <choice>Hospital</choice>
+        <answer>Aardvark</answer>
+    </question>
+    <question>
+        <text>Which of this words doesn't start with the letter K?</text>
+        <choice>Knot</choice>
+        <choice>Mat</choice>
+        <choice>Kriss</choice>
+        <choice>Kunai</choice>
+        <answer>Mat</answer>
+    </question>
+    <question>
+        <text>What letter does the word Bump starts?</text>
+        <choice>D</choice>
+        <choice>F</choice>
+        <choice>H</choice>
+        <choice>C</choice>
+        <choice>None</choice>
+        <answer>None</answer>
+    </question>
+</questions>
