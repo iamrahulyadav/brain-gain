@@ -28,6 +28,7 @@ public class ABCFirstFragmentActivity extends Activity implements
 	int a, b, c, d, e, f, g, h, i, j, k, l, m = 0;
 	private static View textViews;
 	private static String alpha_first = "alphabet_first.xml";
+	private static String QName = "ABC Part 1";
 
 	private static ABCQuizActivity quiz_act = new ABCQuizActivity();
 
@@ -223,6 +224,7 @@ public class ABCFirstFragmentActivity extends Activity implements
 		case R.id.yes:
 			changeTextBG(mView);
 			quiz_act.setFileName(alpha_first);
+			quiz_act.setQuizName(QName);
 			Intent quiz = new Intent(this, ABCQuizActivity.class);
 			startActivity(quiz);
 			this.finish();

@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -48,7 +49,7 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 	public AlertDialog resultDialog;
 	public AlertDialog.Builder resultBuilder;
 
-	private static final String quizName = "Alphabet Part 1";
+	private static String quizName;
 
 	@Override
 	public void onBackPressed() {
@@ -136,27 +137,29 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 		super.onBackPressed();
 	}
 
-	public void saveDataToDB(String q, int cScore){
+	public void saveDataToDB(String q, int cScore) {
 		boolean didItWork = true;
-		try{
+		try {
 			String score = String.valueOf(cScore);
 			Calendar c = Calendar.getInstance();
 			SimpleDateFormat sdf = new SimpleDateFormat("MM:dd:yy");
 			String s = sdf.format(c.getTime());
-			
+
 			SQLSaveData save = new SQLSaveData(ABCQuizActivity.this);
 			save.open();
-			save.createData(q, score, (String) s );
+			save.createData(q, score, (String) s);
 			save.close();
-		}catch(Exception e){
+		} catch (Exception e) {
 			didItWork = false;
 			String error = e.toString();
-			Log.e("Error ",error);
-		}finally{
-			if(didItWork){
-				//Toast.makeText(this, "Yes, it worked", Toast.LENGTH_SHORT).show();
-			}else{
-				//Toast.makeText(this, "No, it failed", Toast.LENGTH_SHORT).show();
+			Log.e("Error ", error);
+		} finally {
+			if (didItWork) {
+				// Toast.makeText(this, "Yes, it worked",
+				// Toast.LENGTH_SHORT).show();
+			} else {
+				// Toast.makeText(this, "No, it failed",
+				// Toast.LENGTH_SHORT).show();
 			}
 		}
 	}
@@ -171,11 +174,11 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
+						saveDataToDB(getQuizName(), cAnswers);
 						resultDialog.dismiss();
-						saveDataToDB(quizName, cAnswers);
 						backToMenu();
 						cAnswers = 0;
-						ABCQuizActivity.this.finish();
+						itemIndex = 0;
 					}
 				});
 		resultDialog = resultBuilder.create();
@@ -189,6 +192,15 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 	public void setFileName(String name) {
 		filename = "questions/";
 		filename = filename + name;
+	}
+
+	public static String getQuizName() {
+		return quizName;
+	}
+	
+	public void setQuizName(String quiz){
+		quizName = "";
+		quizName = quiz;
 	}
 
 }

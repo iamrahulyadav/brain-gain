@@ -99,7 +99,7 @@ public final class R {
         public static final int abc=0x7f0a0037;
         public static final int abcFlipperOne=0x7f0a002e;
         public static final int abcFlipperTwo=0x7f0a002f;
-        public static final int action_settings=0x7f0a0048;
+        public static final int action_settings=0x7f0a0049;
         public static final int alphabetTitle=0x7f0a0005;
         public static final int arrow_left=0x7f0a0042;
         public static final int arrow_right=0x7f0a0043;
@@ -154,6 +154,7 @@ public final class R {
         public static final int quizQuestion=0x7f0a0001;
         public static final int quizResults=0x7f0a0008;
         public static final int quiz_rgrp=0x7f0a0002;
+        public static final int scrollView1=0x7f0a0047;
         public static final int splash_logo=0x7f0a003b;
         public static final int stories=0x7f0a0039;
         public static final int tableRow1=0x7f0a0024;
@@ -161,7 +162,7 @@ public final class R {
         public static final int tableRow3=0x7f0a0029;
         public static final int text=0x7f0a002d;
         public static final int textView1=0x7f0a0000;
-        public static final int tvData=0x7f0a0047;
+        public static final int tvData=0x7f0a0048;
         public static final int tvDate=0x7f0a0046;
         public static final int tvQuizName=0x7f0a0044;
         public static final int tvScore=0x7f0a0045;
