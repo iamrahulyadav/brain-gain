@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.opendevsolutions.braingain.R;
+import com.opendevsolutions.sql.lib.SQLViewActivity;
 
 public class ABCFragmentActivity extends Activity implements OnClickListener {
 
@@ -27,6 +28,7 @@ public class ABCFragmentActivity extends Activity implements OnClickListener {
 		TextView part_1 = (TextView) findViewById(R.id.part_1);
 		TextView part_2 = (TextView) findViewById(R.id.part_2);
 		ImageView back = (ImageView) findViewById(R.id.back_button);
+		ImageView quiz = (ImageView) findViewById(R.id.quizResults);
 
 		Typeface typeface = Typeface.createFromAsset(getAssets(),
 				"fonts/NuevaStd.ttf");
@@ -40,6 +42,7 @@ public class ABCFragmentActivity extends Activity implements OnClickListener {
 		part_1.setOnClickListener(this);
 		part_2.setOnClickListener(this);
 		back.setOnClickListener(this);
+		quiz.setOnClickListener(this);
 
 	}
 
@@ -53,6 +56,10 @@ public class ABCFragmentActivity extends Activity implements OnClickListener {
 		case R.id.part_2:
 			Intent part_2 = new Intent(this, ABCSecondFragmentActivity.class);
 			startActivity(part_2);
+			break;
+		case R.id.quizResults:
+			Intent quizResult = new Intent(this, SQLViewActivity.class);
+			startActivity(quizResult);
 			break;
 		case R.id.back_button:
 			super.onBackPressed();

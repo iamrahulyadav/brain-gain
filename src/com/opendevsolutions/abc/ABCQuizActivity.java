@@ -1,6 +1,8 @@
 package com.opendevsolutions.abc;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -11,6 +13,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -23,6 +26,7 @@ import com.opendevsolutions.braingain.R;
 import com.opendevsolutions.quiz.lib.QuizEvaluation;
 import com.opendevsolutions.quiz.lib.QuizItems;
 import com.opendevsolutions.quiz.lib.XmlParser;
+import com.opendevsolutions.sql.lib.SQLSaveData;
 
 public class ABCQuizActivity extends Activity implements OnClickListener {
 
@@ -43,6 +47,8 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 
 	public AlertDialog resultDialog;
 	public AlertDialog.Builder resultBuilder;
+
+	private static final String quizName = "Alphabet Part 1";
 
 	@Override
 	public void onBackPressed() {
@@ -106,7 +112,8 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 
 	public void setQuestions() {
 		XmlParser parser = new XmlParser();
-		String xml = parser.getXmlFromAssets(getFileName(), getApplicationContext());
+		String xml = parser.getXmlFromAssets(getFileName(),
+				getApplicationContext());
 		Document doc = parser.getDomElement(xml);
 		NodeList nl = doc.getElementsByTagName("question");
 		for (int i = 0; i < nl.getLength(); i++) {
@@ -129,17 +136,43 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 		super.onBackPressed();
 	}
 
+	public void saveDataToDB(String q, int cScore){
+		boolean didItWork = true;
+		try{
+			String score = String.valueOf(cScore);
+			Calendar c = Calendar.getInstance();
+			SimpleDateFormat sdf = new SimpleDateFormat("MM:dd:yy");
+			String s = sdf.format(c.getTime());
+			
+			SQLSaveData save = new SQLSaveData(ABCQuizActivity.this);
+			save.open();
+			save.createData(q, score, (String) s );
+			save.close();
+		}catch(Exception e){
+			didItWork = false;
+			String error = e.toString();
+			Log.e("Error ",error);
+		}finally{
+			if(didItWork){
+				//Toast.makeText(this, "Yes, it worked", Toast.LENGTH_SHORT).show();
+			}else{
+				//Toast.makeText(this, "No, it failed", Toast.LENGTH_SHORT).show();
+			}
+		}
+	}
+
 	public void showResult() {
 		resultBuilder = new AlertDialog.Builder(this);
 		resultBuilder.setTitle("SCORE");
 		resultBuilder.setIcon(R.drawable.ic_launcher);
-		resultBuilder.setMessage("Score: " + cAnswers + "/" + itemLimit
-				+ "\n" + eval.evaluate(cAnswers, itemLimit));
+		resultBuilder.setMessage("Score: " + cAnswers + "/" + itemLimit + "\n"
+				+ eval.evaluate(cAnswers, itemLimit));
 		resultBuilder.setPositiveButton("OK",
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						resultDialog.dismiss();
+						saveDataToDB(quizName, cAnswers);
 						backToMenu();
 						cAnswers = 0;
 						ABCQuizActivity.this.finish();
@@ -147,7 +180,6 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 				});
 		resultDialog = resultBuilder.create();
 		resultDialog.show();
-
 	}
 
 	public static String getFileName() {

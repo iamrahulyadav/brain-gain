@@ -30,33 +30,41 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="30dp"
+        android:paddingBottom="20dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingTop="30dp"
-        android:weightSum="2" >
+        android:weightSum="2"
+        android:layout_weight="1" >
 
-            <TextView
-                android:id="@+id/part_1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/part1"
-                android:gravity="center"
-                android:background="@color/vowelBG"
-                android:textColor="@color/white"
-                android:textSize="53sp" />
+        <TextView
+            android:id="@+id/part_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/vowelBG"
+            android:gravity="center"
+            android:text="@string/part1"
+            android:textColor="@color/white"
+            android:textSize="53sp" />
 
-            <TextView
-                android:id="@+id/part_2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/part2"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:background="@color/consonantBG"
-                android:textColor="@color/white"
-                android:textSize="53sp" />
+        <TextView
+            android:id="@+id/part_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/consonantBG"
+            android:gravity="center"
+            android:text="@string/part2"
+            android:textColor="@color/white"
+            android:textSize="53sp" />
     </TableLayout>
+
+    <ImageView
+        android:id="@+id/quizResults"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:src="@drawable/quiz_icon"
+        android:padding="5dp" />
 
 </LinearLayout>

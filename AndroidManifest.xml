@@ -34,6 +34,7 @@
         <activity android:name="com.opendevsolutions.stories.StoriesFragmentActivity"></activity>
         <activity android:name="com.opendevsolutions.vowelsandconsonants.VowelFragmentActivity"></activity>
         <activity android:name="com.opendevsolutions.vowelsandconsonants.ConsonantFragmentActivity"></activity>
+        <activity android:name="com.opendevsolutions.sql.lib.SQLViewActivity"></activity>
         
     </application>
 
