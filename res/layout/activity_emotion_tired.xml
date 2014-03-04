@@ -9,15 +9,15 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:src="@drawable/happy"
-        android:padding="20dp" />
+        android:src="@drawable/tired"
+        android:padding="30dp" />
     
     <TextView
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:text="@string/happy"
+        android:text="@string/tired"
         android:textSize="50dp"
         android:gravity="center"
         android:textColor="@color/black" />

@@ -4,26 +4,27 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical" >
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/lessonText" >
-    <ImageView
-        android:id="@+id/back_button"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:src="@drawable/back_button" />
-    
-    <TextView
-        android:id="@+id/alphabetTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="3dp"
-        android:text="@string/emotions"
-        android:textColor="@color/white"
-        android:textSize="40sp" />
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/back_button" />
+
+        <TextView
+            android:id="@+id/alphabetTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="@string/emotions"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
     </LinearLayout>
 
     <ViewFlipper
@@ -31,11 +32,16 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" >
-        
-        <include
-            android:id="@+id/emotion"
-            layout="@layout/activity_emotion_happy" />
-        
+
+        <include layout="@layout/activity_emotion_happy" />
+        <include layout="@layout/activity_emotion_angry" />
+        <include layout="@layout/activity_emotion_bored" />
+        <include layout="@layout/activity_emotion_embarrassed" />
+        <include layout="@layout/activity_emotion_hopeful" />
+        <include layout="@layout/activity_emotion_love" />
+        <include layout="@layout/activity_emotion_shy" />
+        <include layout="@layout/activity_emotion_surprised" />
+        <include layout="@layout/activity_emotion_tired" />
     </ViewFlipper>
 
     <include layout="@layout/navigation" />

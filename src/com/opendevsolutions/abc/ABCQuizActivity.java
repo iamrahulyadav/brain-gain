@@ -12,12 +12,12 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -41,6 +41,7 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 	public RadioButton[] rbtn;
 	public RadioGroup rgrp;
 	public TextView tvQ;
+	public ImageView mImage;
 
 	private static String filename;
 	int itemLimit = 5;
@@ -68,6 +69,8 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 		setLayout();
 		Button ok = (Button) findViewById(R.id.btn_next);
 		ok.setOnClickListener(this);
+		mImage = (ImageView)findViewById(R.id.quiz_image);
+		Toast.makeText(this, "converted " + Integer.parseInt("12"), Toast.LENGTH_LONG).show();
 	}
 
 	@Override
@@ -122,12 +125,19 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 			String question = parser.getValue(e, "text");
 			ArrayList<String> choices = parser.getAllValues(e, "choice");
 			String answer = parser.getValue(e, "answer");
+			//String image = parser.getValue(e, "image");
 			quiz.addItem(question, choices, answer);
+			//quiz.setImage(image);
 		}
 		quiz.setNumberOfItems(itemLimit);
 		quiz.shuffle();
+		//setImage();
 	}
-
+	
+	private void setImage(){
+		mImage.setImageResource(quiz.getImage());
+	}
+	
 	private void setLayout() {
 		tvQ.setText((itemIndex + 1) + ") " + quiz.getQuestion(itemIndex));
 		this.addRadioButtons();

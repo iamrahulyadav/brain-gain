@@ -4,19 +4,21 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import android.util.Log;
+import android.widget.ImageView;
 
 public class QuizItems {
 	private ArrayList<Object> list_of_choices = new ArrayList<Object>();
 	private ArrayList<Object> list_of_items = new ArrayList<Object>();
 	private ArrayList<Integer> list_of_indexes = new ArrayList<Integer>();
-	
+	private int myImage;
 
 	// list or dynamic array
 	// number, title, questiontext, choices, answer
 	public int currentItemIndex = 0;
 	private int number_of_items = 0;
 
-	public int addItem(String questiontext, ArrayList<String> choices, String answer) {
+	public int addItem(String questiontext, ArrayList<String> choices,
+			String answer) {
 		ArrayList<String> newItem = new ArrayList<String>();
 		newItem.add(questiontext); // index = 0
 		newItem.add(answer); // index = 1
@@ -33,17 +35,27 @@ public class QuizItems {
 		return list_of_items.size();
 	}
 
+	public int getImage() {
+		return myImage;
+	}
+
+	public void setImage(int aImage) {
+		myImage = aImage;
+	}
+
 	@SuppressWarnings("unchecked")
 	public String getAnswer(int itemIndex) {
 		ArrayList<String> nn = new ArrayList<String>();
-		nn = (ArrayList<String>) list_of_items.get(list_of_indexes.get(itemIndex));
+		nn = (ArrayList<String>) list_of_items.get(list_of_indexes
+				.get(itemIndex));
 		return nn.get(1);
 	}
 
 	@SuppressWarnings("unchecked")
 	public String getQuestion(int itemIndex) {
 		ArrayList<String> nn = new ArrayList<String>();
-		nn = (ArrayList<String>) list_of_items.get(list_of_indexes.get(itemIndex));
+		nn = (ArrayList<String>) list_of_items.get(list_of_indexes
+				.get(itemIndex));
 		return nn.get(0);
 	}
 
@@ -70,21 +82,22 @@ public class QuizItems {
 					otherIndex = list_of_indexes.size() - 1;
 					num2 = list_of_indexes.get(otherIndex);
 				}
-				//swap
+				// swap
 				list_of_indexes.set(i, num2);
 				list_of_indexes.set(otherIndex, num1);
 			}
 		}
 		Log.i("curr order", list_of_indexes.toString());
-		
+
 		return true;
 	}
-	
+
 	public void setNumberOfItems(int items) {
-		if (items == 0) items = this.getLength();
+		if (items == 0)
+			items = this.getLength();
 		this.number_of_items = items;
 	}
-	
+
 	public int getNumberOfItems() {
 		return this.number_of_items;
 	}

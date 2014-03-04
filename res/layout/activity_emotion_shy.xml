@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:src="@drawable/happy"
+        android:src="@drawable/shy"
         android:padding="20dp" />
     
     <TextView
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:text="@string/happy"
+        android:text="@string/shy"
         android:textSize="50dp"
         android:gravity="center"
         android:textColor="@color/black" />

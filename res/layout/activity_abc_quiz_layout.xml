@@ -13,6 +13,11 @@
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
+    <ImageView
+        android:id="@+id/quiz_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <RadioGroup
         android:id="@+id/quiz_rgrp"
         android:layout_width="match_parent"

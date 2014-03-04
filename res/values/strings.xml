@@ -26,6 +26,14 @@
     <string name="result">Quiz Records</string>
     
     <string name="happy">Happy</string>
+    <string name="shy">Shy</string>
+    <string name="surprised">Surprised</string>
+    <string name="tired">Tired</string>
+    <string name="love">Love</string>
+    <string name="hopeful">Hopeful</string>
+    <string name="embarrassed">Embarrassed</string>
+    <string name="bored">Bored</string>
+    <string name="angry">Angry</string>
     
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
