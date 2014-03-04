@@ -41,5 +41,41 @@
         <choice>E</choice>
         <answer>F</answer>
     </question>
-    
+    <question>
+        <text>How many letter b are there in the word Fantastic?</text>
+        <choice>1</choice>
+        <choice>4</choice>
+        <choice>3</choice>
+        <choice>None</choice>
+        <answer>None</answer>
+    </question>
+    <question>
+        <text>What is the second letter of the word Aardvark</text>
+        <choice>D</choice>
+        <choice>A</choice>
+        <choice>E</choice>
+        <answer>A</answer>
+    </question>
+    <question>
+        <text>Which letter comes first in the alphabet? L or H?</text>
+        <choice>H</choice>
+        <choice>L</choice>
+        <answer>H</answer>
+    </question>
+    <question>
+        <text>Which set of letter are in alphabetical order?</text>
+        <choice>A B C E D F G H I</choice>
+        <choice>B A C D E F H G I</choice>
+        <choice>A B C D E F G I H</choice>
+        <choice>A B C D E F G H I</choice>
+        <answer>A B C D E F G H I</answer>
+    </question>
+    <question>
+        <text>On the part 1 lesson of the alphabet, which creature starts with the letter G?</text>
+        <choice>Grandma</choice>
+        <choice>Goose</choice>
+        <choice>Goat</choice>
+        <choice>Gerbil</choice>
+        <answer>Goose</answer>
+    </question>
 </questions>
