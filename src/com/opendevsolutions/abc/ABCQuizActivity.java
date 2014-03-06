@@ -51,6 +51,7 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 	public AlertDialog.Builder resultBuilder;
 
 	private static String quizName;
+	public int myImage;
 
 	@Override
 	public void onBackPressed() {
@@ -70,7 +71,14 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 		Button ok = (Button) findViewById(R.id.btn_next);
 		ok.setOnClickListener(this);
 		mImage = (ImageView)findViewById(R.id.quiz_image);
-		Toast.makeText(this, "converted " + Integer.parseInt("12"), Toast.LENGTH_LONG).show();
+	}
+	
+	
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		setImageResource();
 	}
 
 	@Override
@@ -125,17 +133,24 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 			String question = parser.getValue(e, "text");
 			ArrayList<String> choices = parser.getAllValues(e, "choice");
 			String answer = parser.getValue(e, "answer");
-			//String image = parser.getValue(e, "image");
+			String image = parser.getValue(e, "image");
 			quiz.addItem(question, choices, answer);
-			//quiz.setImage(image);
+			setImageID(image);
 		}
 		quiz.setNumberOfItems(itemLimit);
 		quiz.shuffle();
-		//setImage();
 	}
 	
-	private void setImage(){
-		mImage.setImageResource(quiz.getImage());
+	private void setImageResource(){
+		mImage.setImageResource(getImage());
+	}
+	
+	private void setImageID(String image){
+		myImage = getResources().getIdentifier(image, "drawable", getPackageName());
+	}
+	
+	private int getImage(){
+		return myImage;
 	}
 	
 	private void setLayout() {

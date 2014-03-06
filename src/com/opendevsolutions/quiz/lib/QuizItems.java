@@ -10,7 +10,6 @@ public class QuizItems {
 	private ArrayList<Object> list_of_choices = new ArrayList<Object>();
 	private ArrayList<Object> list_of_items = new ArrayList<Object>();
 	private ArrayList<Integer> list_of_indexes = new ArrayList<Integer>();
-	private int myImage;
 
 	// list or dynamic array
 	// number, title, questiontext, choices, answer
@@ -33,14 +32,6 @@ public class QuizItems {
 
 	public int getLength() {
 		return list_of_items.size();
-	}
-
-	public int getImage() {
-		return myImage;
-	}
-
-	public void setImage(int aImage) {
-		myImage = aImage;
 	}
 
 	@SuppressWarnings("unchecked")

@@ -1,6 +1,6 @@
 <questions>
     <question>
-        <image>R.drawable.a</image>
+        <image>back_button</image>
         <text>Which of this words starts with the letter A?</text>
         <choice>Goat</choice>
         <choice>Aardvark</choice>
@@ -9,6 +9,7 @@
         <answer>Aardvark</answer>
     </question>
     <question>
+        <image>back_button</image>
         <text>Which of this words doesn't start with the letter K?</text>
         <choice>Knot</choice>
         <choice>Mat</choice>
@@ -17,6 +18,7 @@
         <answer>Mat</answer>
     </question>
     <question>
+        <image>back_button</image>
         <text>What letter does the word Bump starts?</text>
         <choice>D</choice>
         <choice>F</choice>
@@ -26,6 +28,7 @@
         <answer>None</answer>
     </question>
     <question>
+        <image>back_button</image>
         <text>How many letter C on the word Concatenate</text>
         <choice>3</choice>
         <choice>1</choice>
@@ -34,6 +37,7 @@
         <answer>2</answer>
     </question>
     <question>
+        <image>back_button</image>
         <text>What letter does the word Freckles start?</text>
         <choice>L</choice>
         <choice>F</choice>
@@ -42,6 +46,7 @@
         <answer>F</answer>
     </question>
     <question>
+        <image>back_button</image>
         <text>How many letter b are there in the word Fantastic?</text>
         <choice>1</choice>
         <choice>4</choice>
@@ -50,6 +55,7 @@
         <answer>None</answer>
     </question>
     <question>
+        <image>back_button</image>
         <text>What is the second letter of the word Aardvark</text>
         <choice>D</choice>
         <choice>A</choice>
@@ -57,12 +63,14 @@
         <answer>A</answer>
     </question>
     <question>
+        <image>back_button</image>
         <text>Which letter comes first in the alphabet? L or H?</text>
         <choice>H</choice>
         <choice>L</choice>
         <answer>H</answer>
     </question>
     <question>
+        <image>back_button</image>
         <text>Which set of letter are in alphabetical order?</text>
         <choice>A B C E D F G H I</choice>
         <choice>B A C D E F H G I</choice>
@@ -71,6 +79,7 @@
         <answer>A B C D E F G H I</answer>
     </question>
     <question>
+        <image>back_button</image>
         <text>On the part 1 lesson of the alphabet, which creature starts with the letter G?</text>
         <choice>Grandma</choice>
         <choice>Goose</choice>
