@@ -70,15 +70,13 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 		setLayout();
 		Button ok = (Button) findViewById(R.id.btn_next);
 		ok.setOnClickListener(this);
-		mImage = (ImageView)findViewById(R.id.quiz_image);
+		mImage = (ImageView) findViewById(R.id.quiz_image);
 	}
-	
-	
 
 	@Override
 	protected void onResume() {
 		super.onResume();
-		setImageResource();
+		showImage();
 	}
 
 	@Override
@@ -96,6 +94,7 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 				rgrp.removeAllViews();
 				itemIndex++;
 				setLayout();
+				showImage();
 			} else {
 				showResult();
 			}
@@ -130,29 +129,35 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 		NodeList nl = doc.getElementsByTagName("question");
 		for (int i = 0; i < nl.getLength(); i++) {
 			Element e = (Element) nl.item(i);
+			String image = parser.getValue(e, "image");
 			String question = parser.getValue(e, "text");
 			ArrayList<String> choices = parser.getAllValues(e, "choice");
 			String answer = parser.getValue(e, "answer");
-			String image = parser.getValue(e, "image");
-			quiz.addItem(question, choices, answer);
-			setImageID(image);
+			
+			quiz.addItem(question, choices, answer, image);
 		}
 		quiz.setNumberOfItems(itemLimit);
 		quiz.shuffle();
 	}
 	
-	private void setImageResource(){
+	private void showImage(){
+		setImageID();
+		setImageResource();
+	}
+
+	private void setImageResource() {
 		mImage.setImageResource(getImage());
 	}
-	
-	private void setImageID(String image){
-		myImage = getResources().getIdentifier(image, "drawable", getPackageName());
+
+	private void setImageID() {
+		myImage = getResources().getIdentifier(quiz.getImage(itemIndex), "drawable",
+				getPackageName());
 	}
-	
-	private int getImage(){
+
+	private int getImage() {
 		return myImage;
 	}
-	
+
 	private void setLayout() {
 		tvQ.setText((itemIndex + 1) + ") " + quiz.getQuestion(itemIndex));
 		this.addRadioButtons();
@@ -222,8 +227,8 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 	public static String getQuizName() {
 		return quizName;
 	}
-	
-	public void setQuizName(String quiz){
+
+	public void setQuizName(String quiz) {
 		quizName = "";
 		quizName = quiz;
 	}

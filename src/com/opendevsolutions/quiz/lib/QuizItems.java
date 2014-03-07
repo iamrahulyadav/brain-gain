@@ -10,6 +10,7 @@ public class QuizItems {
 	private ArrayList<Object> list_of_choices = new ArrayList<Object>();
 	private ArrayList<Object> list_of_items = new ArrayList<Object>();
 	private ArrayList<Integer> list_of_indexes = new ArrayList<Integer>();
+	private ArrayList<Object> list_of_images = new ArrayList<Object>();
 
 	// list or dynamic array
 	// number, title, questiontext, choices, answer
@@ -17,13 +18,16 @@ public class QuizItems {
 	private int number_of_items = 0;
 
 	public int addItem(String questiontext, ArrayList<String> choices,
-			String answer) {
+			String answer, String image) {
 		ArrayList<String> newItem = new ArrayList<String>();
 		newItem.add(questiontext); // index = 0
 		newItem.add(answer); // index = 1
+		newItem.add(image);
+		
 		list_of_items.add(newItem);
 
 		list_of_choices.add(choices);
+		list_of_images.add(image);
 		list_of_indexes.add(list_of_indexes.size());
 		this.number_of_items = list_of_indexes.size();
 
@@ -32,6 +36,14 @@ public class QuizItems {
 
 	public int getLength() {
 		return list_of_items.size();
+	}
+
+	@SuppressWarnings("unchecked")
+	public String getImage(int itemIndex) {
+		ArrayList<String> nn = new ArrayList<String>();
+		nn = (ArrayList<String>) list_of_items.get(list_of_indexes
+				.get(itemIndex));
+		return nn.get(2); 
 	}
 
 	@SuppressWarnings("unchecked")
