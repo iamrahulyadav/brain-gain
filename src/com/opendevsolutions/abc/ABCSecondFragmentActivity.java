@@ -1,6 +1,7 @@
 package com.opendevsolutions.abc;
 
 import com.opendevsolutions.braingain.R;
+import com.opendevsolutions.quiz.lib.QuizActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,7 +20,7 @@ import android.widget.ViewFlipper;
 
 public class ABCSecondFragmentActivity extends Activity implements
 		OnClickListener {
-	ABCQuizActivity quiz_act = new ABCQuizActivity();
+	QuizActivity quiz_act = new QuizActivity();
 	private int displayChild;
 	private int childCount;
 	private ViewFlipper flipper;
@@ -223,7 +224,7 @@ public class ABCSecondFragmentActivity extends Activity implements
 			changeTextBG(mView);
 			quiz_act.setFileName(alpha_second);
 			quiz_act.setQuizName(QName);
-			Intent quiz = new Intent(this, ABCQuizActivity.class);
+			Intent quiz = new Intent(this, QuizActivity.class);
 			startActivity(quiz);
 			this.finish();
 			break;

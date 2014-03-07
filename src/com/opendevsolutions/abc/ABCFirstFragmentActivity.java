@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.opendevsolutions.braingain.R;
+import com.opendevsolutions.quiz.lib.QuizActivity;
 
 public class ABCFirstFragmentActivity extends Activity implements
 		OnClickListener {
@@ -30,7 +31,7 @@ public class ABCFirstFragmentActivity extends Activity implements
 	private static String alpha_first = "alphabet_first.xml";
 	private static String QName = "ABC Part 1";
 
-	private static ABCQuizActivity quiz_act = new ABCQuizActivity();
+	private static QuizActivity quiz_act = new QuizActivity();
 
 	private Animation inFromRightAnimation() {
 
@@ -225,7 +226,7 @@ public class ABCFirstFragmentActivity extends Activity implements
 			changeTextBG(mView);
 			quiz_act.setFileName(alpha_first);
 			quiz_act.setQuizName(QName);
-			Intent quiz = new Intent(this, ABCQuizActivity.class);
+			Intent quiz = new Intent(this, QuizActivity.class);
 			startActivity(quiz);
 			this.finish();
 			break;

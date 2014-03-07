@@ -26,7 +26,7 @@
         <activity android:name="com.opendevsolutions.abc.ABCFragmentActivity"></activity>
         <activity android:name="com.opendevsolutions.abc.ABCFirstFragmentActivity"></activity>
         <activity android:name="com.opendevsolutions.abc.ABCSecondFragmentActivity"></activity>
-        <activity android:name="com.opendevsolutions.abc.ABCQuizActivity"></activity>
+        <activity android:name="com.opendevsolutions.quiz.lib.QuizActivity"></activity>
         <activity android:name="com.opendevsolutions.directions.DirectionsFragmentActivity"></activity>
         <activity android:name="com.opendevsolutions.emotions.EmotionsFragmentActivity"></activity>
         <activity android:name="com.opendevsolutions.vowelsandconsonants.VowelsAndConsonantsActivity"></activity>

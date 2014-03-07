@@ -1,4 +1,4 @@
-package com.opendevsolutions.abc;
+package com.opendevsolutions.quiz.lib;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -24,12 +24,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.opendevsolutions.braingain.R;
-import com.opendevsolutions.quiz.lib.QuizEvaluation;
-import com.opendevsolutions.quiz.lib.QuizItems;
-import com.opendevsolutions.quiz.lib.XmlParser;
 import com.opendevsolutions.sql.lib.SQLSaveData;
 
-public class ABCQuizActivity extends Activity implements OnClickListener {
+public class QuizActivity extends Activity implements OnClickListener {
 
 	public QuizItems quiz = new QuizItems();
 	public QuizEvaluation eval = new QuizEvaluation();
@@ -175,7 +172,7 @@ public class ABCQuizActivity extends Activity implements OnClickListener {
 			SimpleDateFormat sdf = new SimpleDateFormat("MM:dd:yy");
 			String s = sdf.format(c.getTime());
 
-			SQLSaveData save = new SQLSaveData(ABCQuizActivity.this);
+			SQLSaveData save = new SQLSaveData(QuizActivity.this);
 			save.open();
 			save.createData(q, score, (String) s);
 			save.close();
