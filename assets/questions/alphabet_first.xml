@@ -103,4 +103,53 @@
         <choice>G</choice>
         <answer>E</answer>
     </question>
+    <question>
+        <image>ice_cream</image>
+        <text>What is this?</text>
+        <choice>Lolipop</choice>
+        <choice>Ice Cream</choice>
+        <choice>Candy</choice>
+        <answer>Ice Cream</answer>
+    </question>
+    <question>
+        <image>lion</image>
+        <text>King of the jungle</text>
+        <choice>Tiger</choice>
+        <choice>Jaguar</choice>
+        <choice>Lion</choice>
+        <answer>Lion</answer>
+    </question>
+    <question>
+        <image>kite</image>
+        <text>What do you call this?</text>
+        <choice>Kit</choice>
+        <choice>Plane</choice>
+        <choice>Kite</choice>
+        <answer>Kite</answer>
+    </question>
+    <question>
+        <image>jar</image>
+        <text>What do you put inside the Jar?</text>
+        <choice>Dust</choice>
+        <choice>Gold</choice>
+        <choice>Soil</choice>
+        <choice>Water</choice>
+        <answer>Water</answer>
+    </question>
+    <question>
+        <image>fish</image>
+        <text>What do you call this animal that lives on water?</text>
+        <choice>Cow</choice>
+        <choice>Bird</choice>
+        <choice>Fish</choice>
+        <answer>Fish</answer>
+    </question>
+    <question>
+        <image>heart</image>
+        <text>What is this?</text>
+        <choice>Heart</choice>
+        <choice>Hand</choice>
+        <choice>Brick</choice>
+        <answer>Heart</answer>
+    </question>
 </questions>
