@@ -42,6 +42,7 @@
         <include layout="@layout/activity_emotion_shy" />
         <include layout="@layout/activity_emotion_surprised" />
         <include layout="@layout/activity_emotion_tired" />
+        <include layout="@layout/activity_abc_quiz" />
     </ViewFlipper>
 
     <include layout="@layout/navigation" />

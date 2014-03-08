@@ -34,7 +34,10 @@
         android:layout_weight="1" >
 
         <include layout="@layout/activity_consonants" />
+
         <include layout="@layout/activity_abc_quiz" />
     </ViewFlipper>
+
+    <include layout="@layout/navigation" />
 
 </LinearLayout>

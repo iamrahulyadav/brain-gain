@@ -24,6 +24,9 @@
     <string name="no">No</string>
     <string name="select">OK</string>
     <string name="result">Quiz Records</string>
+    <string name="instructVowel1">In this phase, we encourage the guidance of a parent/guardian to help the child to further understand the lesson.</string>
+    <string name="instructVowel2"> Vowels - a speech sound made with your mouth open and your tongue in the middle of your mouth not touching your teeth, lips, etc.</string>
+    
     
     <string name="happy">Happy</string>
     <string name="shy">Shy</string>

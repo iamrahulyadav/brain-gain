@@ -1,6 +1,7 @@
 package com.opendevsolutions.vowelsandconsonants;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.opendevsolutions.braingain.R;
+import com.opendevsolutions.quiz.lib.QuizActivity;
 
 public class VowelFragmentActivity extends Activity implements OnClickListener {
 
@@ -20,6 +22,11 @@ public class VowelFragmentActivity extends Activity implements OnClickListener {
 	private int childCount;
 	private ViewFlipper flipper;
 	public static int display;
+	private static View textViews;
+	private static String quiz_name = "vowels.xml";
+	private static String QName = "Vowel";
+
+	private static QuizActivity quiz_act = new QuizActivity();
 
 	private Animation inFromRightAnimation() {
 
@@ -68,7 +75,30 @@ public class VowelFragmentActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onBackPressed() {
+	}
 
+	private Runnable myThread = new Runnable() {
+		@Override
+		public void run() {
+			try {
+				Thread.sleep(2000);
+				changeToDefaultBG(textViews);
+			} catch (Throwable t) {
+
+			}
+		}
+	};
+
+	public static View getDefaultBG() {
+		return textViews;
+	}
+
+	public void changeToDefaultBG(View text) {
+		text.setBackgroundColor(getResources().getColor(R.color.white));
+	}
+
+	public void changeTextBG(View text) {
+		text.setBackgroundColor(getResources().getColor(R.color.lessonText));
 	}
 
 	@Override
@@ -88,15 +118,22 @@ public class VowelFragmentActivity extends Activity implements OnClickListener {
 		ImageView next = (ImageView) findViewById(R.id.arrow_right);
 		ImageView left = (ImageView) findViewById(R.id.arrow_left);
 		ImageView back = (ImageView) findViewById(R.id.back_button);
+
+		TextView yes = (TextView) findViewById(R.id.yes);
+		TextView no = (TextView) findViewById(R.id.no);
+
 		next.setOnClickListener(this);
 		left.setOnClickListener(this);
 		back.setOnClickListener(this);
 
+		yes.setOnClickListener(this);
+		no.setOnClickListener(this);
+
 	}
 
 	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
+	public void onClick(View mView) {
+		switch (mView.getId()) {
 		case R.id.arrow_left:
 			displayChild = flipper.getDisplayedChild();
 			if (displayChild == 0) {
@@ -106,6 +143,22 @@ public class VowelFragmentActivity extends Activity implements OnClickListener {
 				flipper.setOutAnimation(outToRightAnimation());
 				flipper.showPrevious();
 			}
+			break;
+		case R.id.yes:
+			changeTextBG(mView);
+			quiz_act.setFileName(quiz_name);
+			quiz_act.setQuizName(QName);
+			Intent quiz = new Intent(this, QuizActivity.class);
+			startActivity(quiz);
+			this.finish();
+			break;
+		case R.id.no:
+			textViews = mView;
+			changeTextBG(mView);
+			new Thread(myThread).start();
+			flipper.setInAnimation(inFromLeftAnimation());
+			flipper.setOutAnimation(outToRightAnimation());
+			flipper.setDisplayedChild(0);
 			break;
 		case R.id.arrow_right:
 			displayChild = flipper.getDisplayedChild();

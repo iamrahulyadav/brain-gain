@@ -3,24 +3,37 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    android:gravity="center" >
-
+    android:gravity="center"
+    android:padding="5dp" >
+    
     <TextView
-        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="3"
-        android:text="@string/intro_conso"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="@string/instructVowel1"
+        android:textSize="15sp"
+        android:textColor="@color/black" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/instructVowel2"
+        android:textSize="15sp"
+        android:textColor="@color/black" />
 
     <ImageView
         android:id="@+id/consonant"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="3"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:padding="10dp"
         android:src="@drawable/consonants" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/intro_conso"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/black" />
 
 </LinearLayout>
