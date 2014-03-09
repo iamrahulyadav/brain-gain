@@ -1,5 +1,75 @@
 <questions>
     <question>
+        <image>ant</image>
+        <text>What vowel is in his name?</text>
+        <choice>E</choice>
+        <choice>A</choice>
+        <choice>U</choice>
+        <answer>A</answer>
+    </question>
+    <question>
+        <image>elephant</image>
+        <text>How many vowels does the word elephant have?</text>
+        <choice>2</choice>
+        <choice>3</choice>
+        <choice>4</choice>
+        <answer>3</answer>
+    </question>
+    <question>
+        <image>ice_cream</image>
+        <text>How many vowels does the word Ice Cream have?</text>
+        <choice>5</choice>
+        <choice>3</choice>
+        <choice>4</choice>
+        <choice>2</choice>
+        <answer>4</answer>
+    </question>
+    <question>
+        <image>vowel</image>
+        <text>How many are the vowel letters?</text>
+        <choice>5</choice>
+        <choice>7</choice>
+        <choice>6</choice>
+        <answer>5</answer>
+    </question>
+    <question>
+        <image>letter_i</image>
+        <text>Is this a Vowel or a Consonant?</text>
+        <choice>Yes</choice>
+        <choice>No</choice>
+        <answer>Yes</answer>
+    </question>
+    <question>
+        <image>letter_u</image>
+        <text>Choose the word that uses this vowel</text>
+        <choice>Bug</choice>
+        <choice>Rag</choice>
+        <choice>Bag</choice>
+        <choice>Flag</choice>
+        <answer>Bug</answer>
+    </question>
+    <question>
+        <image>airplane</image>
+        <text>How many vowels are being used in the name of this thing?</text>
+        <choice>6</choice>
+        <choice>4</choice>
+        <choice>5</choice>
+        <answer>4</answer>
+    </question>
+    <question>
         <image></image>
+        <text>Choose a word the uses all the vowels</text>
+        <choice>Customization</choice>
+        <choice>Organization</choice>
+        <choice>Abstentious</choice>
+        <answer>Abstentious</answer>
+    </question>
+    <question>
+        <image>letter_e</image>
+        <text>What word in the following uses this vowel</text>
+        <choice>Drip</choice>
+        <choice>Flop</choice>
+        <choice>Bear</choice>
+        <answer>Bear</answer>
     </question>
 </questions>
