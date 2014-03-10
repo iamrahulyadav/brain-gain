@@ -31,7 +31,10 @@
         <activity android:name="com.opendevsolutions.emotions.EmotionsFragmentActivity"></activity>
         <activity android:name="com.opendevsolutions.vowelsandconsonants.VowelsAndConsonantsActivity"></activity>
         <activity android:name="com.opendevsolutions.help.HelpFragmentActivity"></activity>
-        <activity android:name="com.opendevsolutions.stories.StoriesFragmentActivity"></activity>
+        <activity android:name="com.opendevsolutions.stories.StoriesActivity"></activity>
+        <activity android:name="com.opendevsolutions.stories.StoryOneFragmentActivity"></activity>
+        <activity android:name="com.opendevsolutions.stories.StoryTwoFragmentActivity"></activity>
+        <activity android:name="com.opendevsolutions.stories.StoryThreeFragmentActivity"></activity>
         <activity android:name="com.opendevsolutions.vowelsandconsonants.VowelFragmentActivity"></activity>
         <activity android:name="com.opendevsolutions.vowelsandconsonants.ConsonantFragmentActivity"></activity>
         <activity android:name="com.opendevsolutions.sql.lib.SQLViewActivity"></activity>

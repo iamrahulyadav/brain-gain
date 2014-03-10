@@ -1,15 +1,23 @@
 package com.opendevsolutions.help;
 
 import android.app.Activity;
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.os.Bundle;
 
-public class HelpFragmentActivity extends Activity implements OnClickListener{
+import com.opendevsolutions.braingain.R;
+
+public class HelpFragmentActivity extends Activity {
+
+	
+	
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+	}
 
 	@Override
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_help);
 	}
 
 }

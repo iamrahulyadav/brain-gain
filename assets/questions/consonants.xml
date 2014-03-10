@@ -1,0 +1,50 @@
+<questions>
+    <question>
+        <image>banana</image>
+        <text>Does the name of this fruit starts with a vowel?</text>
+        <choice>Yes</choice>
+        <choice>No</choice>
+        <answer>No</answer>
+    </question>
+    <question>
+        <image></image>
+        <text>Which of the following is a consonant?</text>
+        <choice>E</choice>
+        <choice>B</choice>
+        <choice>I</choice>
+        <choice>O</choice>
+        <answer>B</answer>
+    </question>
+    <question>
+        <image></image>
+        <text>Which of the following does not contain a vowel?</text>
+        <choice>BCDEF</choice>
+        <choice>FGHIJ</choice>
+        <choice>QRSTV</choice>
+        <choice>ABCFG</choice>
+        <answer>QRSTV</answer>
+    </question>
+    <question>
+        <image>cp</image>
+        <text>Is this a vowel or a consonant?</text>
+        <choice>Vowel</choice>
+        <choice>Consonant</choice>
+        <answer>Consonant</answer>
+    </question>
+    <question>
+        <image>cb</image>
+        <text>Is this letter a vowel?</text>
+        <choice>Yes</choice>
+        <choice>No</choice>
+        <answer>No</answer>
+    </question>
+    <question>
+        <image>cj</image>
+        <text>What word of the following contains this letter?</text>
+        <choice>Bar</choice>
+        <choice>Sour</choice>
+        <choice>Jar</choice>
+        <choice>Flour</choice>
+        <answer>Jar</answer>
+    </question>
+</questions>

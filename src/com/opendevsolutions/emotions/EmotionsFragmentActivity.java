@@ -1,6 +1,7 @@
 package com.opendevsolutions.emotions;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.opendevsolutions.braingain.R;
+import com.opendevsolutions.quiz.lib.QuizActivity;
 
 public class EmotionsFragmentActivity extends Activity implements
 		OnClickListener {
@@ -20,7 +22,12 @@ public class EmotionsFragmentActivity extends Activity implements
 	private int displayChild;
 	private int childCount;
 	private ViewFlipper flipper;
-	public static int display;
+
+	private static View textViews;
+	private static String quiz_file = "emotions.xml";
+	private static String QName = "Emotion";
+
+	private static QuizActivity quiz_act = new QuizActivity();
 
 	private Animation inFromRightAnimation() {
 
@@ -67,28 +74,6 @@ public class EmotionsFragmentActivity extends Activity implements
 		return outtoRight;
 	}
 
-	private Animation inFromUpAnimation() {
-		Animation inFromUp = new TranslateAnimation(
-				Animation.RELATIVE_TO_PARENT, 0.0f,
-				Animation.RELATIVE_TO_PARENT, 0.0f,
-				Animation.RELATIVE_TO_PARENT, +1.0f,
-				Animation.RELATIVE_TO_PARENT, 0.0f);
-		inFromUp.setDuration(300);
-		inFromUp.setInterpolator(new AccelerateInterpolator());
-		return inFromUp;
-	}
-
-	private Animation outToUpAnimation() {
-		Animation outtoUp = new TranslateAnimation(
-				Animation.RELATIVE_TO_PARENT, 0.0f,
-				Animation.RELATIVE_TO_PARENT, 0.0f,
-				Animation.RELATIVE_TO_PARENT, 0.0f,
-				Animation.RELATIVE_TO_PARENT, -1.0f);
-		outtoUp.setDuration(300);
-		outtoUp.setInterpolator(new AccelerateInterpolator());
-		return outtoUp;
-	}
-
 	@Override
 	public void onBackPressed() {
 	}
@@ -110,14 +95,45 @@ public class EmotionsFragmentActivity extends Activity implements
 		ImageView next = (ImageView) findViewById(R.id.arrow_right);
 		ImageView left = (ImageView) findViewById(R.id.arrow_left);
 		ImageView back = (ImageView) findViewById(R.id.back_button);
+
+		TextView yes = (TextView) findViewById(R.id.yes);
+		TextView no = (TextView) findViewById(R.id.no);
+
 		next.setOnClickListener(this);
 		left.setOnClickListener(this);
 		back.setOnClickListener(this);
+
+		yes.setOnClickListener(this);
+		no.setOnClickListener(this);
+	}
+
+	private Runnable myThread = new Runnable() {
+		@Override
+		public void run() {
+			try {
+				Thread.sleep(2000);
+				changeToDefaultBG(textViews);
+			} catch (Throwable t) {
+
+			}
+		}
+	};
+
+	public static View getDefaultBG() {
+		return textViews;
+	}
+
+	public void changeToDefaultBG(View text) {
+		text.setBackgroundColor(getResources().getColor(R.color.white));
+	}
+
+	public void changeTextBG(View text) {
+		text.setBackgroundColor(getResources().getColor(R.color.lessonText));
 	}
 
 	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
+	public void onClick(View mView) {
+		switch (mView.getId()) {
 		case R.id.arrow_left:
 			displayChild = flipper.getDisplayedChild();
 			if (displayChild == 0) {
@@ -137,6 +153,22 @@ public class EmotionsFragmentActivity extends Activity implements
 				flipper.setOutAnimation(outToLeftAnimation());
 				flipper.showNext();
 			}
+			break;
+		case R.id.yes:
+			changeTextBG(mView);
+			quiz_act.setFileName(quiz_file);
+			quiz_act.setQuizName(QName);
+			Intent quiz = new Intent(this, QuizActivity.class);
+			startActivity(quiz);
+			this.finish();
+			break;
+		case R.id.no:
+			textViews = mView;
+			changeTextBG(mView);
+			new Thread(myThread).start();
+			flipper.setInAnimation(inFromLeftAnimation());
+			flipper.setOutAnimation(outToRightAnimation());
+			flipper.setDisplayedChild(0);
 			break;
 		case R.id.back_button:
 			super.onBackPressed();

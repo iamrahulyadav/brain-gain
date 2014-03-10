@@ -10,11 +10,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.opendevsolutions.abc.ABCFragmentActivity;
 import com.opendevsolutions.directions.DirectionsFragmentActivity;
 import com.opendevsolutions.emotions.EmotionsFragmentActivity;
+import com.opendevsolutions.help.HelpFragmentActivity;
+import com.opendevsolutions.stories.StoriesActivity;
 import com.opendevsolutions.vowelsandconsonants.VowelsAndConsonantsActivity;
 
 public class MainActivity extends Activity implements OnClickListener {
@@ -91,10 +92,12 @@ public class MainActivity extends Activity implements OnClickListener {
 			startActivity(direction);
 			break;
 		case R.id.stories:
-			Toast.makeText(this, "Stories is currently not available!", Toast.LENGTH_SHORT).show();
+			Intent stories = new Intent(this, StoriesActivity.class);
+			startActivity(stories);
 			break;
 		case R.id.help:
-			Toast.makeText(this, "Help is currently not available!", Toast.LENGTH_SHORT).show();
+			Intent help = new Intent(this, HelpFragmentActivity.class);
+			startActivity(help);
 			break;
 		}
 	}

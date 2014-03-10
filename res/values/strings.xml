@@ -2,7 +2,6 @@
 <resources>
 
     <string name="subText">Kids Basic Learning Tutorials</string>
-    
     <string name="loading">Loading...</string>
     <string name="selectLesson">Select a Lesson</string>
     <string name="imageDesc">ImageDescription</string>
@@ -11,9 +10,11 @@
     <string name="consonant">Consonants</string>
     <string name="emotions">Emotions</string>
     <string name="direction">Direction</string>
-    
+    <string name="stories">Select a Story</string>
     <string name="leftDirection">Michael is pointing Left.</string>
     <string name="rightDirection">Michael is pointing Right.</string>
+    <string name="upward">Laurence is looking up</string>
+    <string name="downward">Alicia is looking down</string>
     <string name="intro_conso">The pink colored boxes are consonants</string>
     <string name="intro_vow">The blue colored boxes are vowels</string>
     <string name="alpha_part">Select Part</string>
@@ -24,10 +25,50 @@
     <string name="no">No</string>
     <string name="select">OK</string>
     <string name="result">Quiz Records</string>
-    <string name="instructVowel1">In this phase, we encourage the guidance of a parent/guardian to help the child to further understand the lesson.</string>
-    <string name="instructVowel2"> Vowels - a speech sound made with your mouth open and your tongue in the middle of your mouth not touching your teeth, lips, etc.</string>
-    
-    
+    <string name="instruct">In this phase, we encourage the guidance of a parent/guardian to help the child to further understand the lesson.</string>
+    <string name="instructVowel"> Vowels - a speech sound made with your mouth open and your tongue in the middle of your mouth not touching your teeth, lips, etc.</string>
+   	<string name="instructConsonant">Consonants - The majority of letters in the alphabet are consonant letters. Most consonant letters have only one sound and rarely sound like their name. When sounding consonants, air flow is interrupted or limited by the position of the tongue, teeth or lips.</string>
+    <string name="story1_page1">In a field one summer\’s day a Grasshopper was hopping about, chirping and singing to its heart\’s content. An Ant passed by, bearing along with great effort an ear of corn he was taking to the nest. \n\n
+\”Why not come and chat with me,\” said the Grasshopper, "instead of toiling and moiling away?\” \n\n
+\”I am helping to lay up food for the winter,\” said the Ant, \”and recommend you to do the same.\” \n\n
+\”Why bother about winter?\” said the Grasshopper; \”we have got plenty of food at present.\”</string>
+    <string name="story1_page2">	    But the Ant went on its way and continued its toil. When the winter came the Grasshopper found itself dying of hunger, while it saw the ants distributing, every day, corn and grain from the stores they had collected in the summer. \n\nThen the Grasshopper knew.\n\nQuestion:\nWhat is the moral lesson of the story?</string>
+    <string name="story1_page3">WORK TODAY AND YOU CAN REAP THE BENEFITS TOMORROW!</string>
+    <string name="story2_page1">	    One day a young man was standing in the middle of the town proclaiming that he had the most beautiful heart in the whole valley.\n\n
+		A large crowd gathered and they all admired his heart for it was perfect. There was not a mark or a flaw in it. Yes, they all agreed it truly was the most beautiful heart they had ever seen.
+		The young man was very proud and boasted more loudly about his beautiful heart.\n\n
+		Suddenly, an old man appeared at the front of the crowd and said, “Why your heart is not nearly as beautiful as mine.”\n\n
+		The crowd and the young man looked at the old man’s heart. It was beating strongly ... but full of scars. It had places where pieces had been removed and other pieces put in ... but they didn’t fit quite right and there were several jagged edges.</string>
+    <string name="story2_page2">	    In fact, in some places there were deep gouges where whole pieces were missing. The people starred ... how could he say his heart is more beautiful, they thought?
+The young man looked at the old man’s heart and saw its state and laughed.\n\n
+“You must be joking,” he said. “Compare your heart with mine ... mine is perfect and yours is a mess of scars and tears.”\n\n
+“Yes,” said the old man, “Yours is perfect looking ... but I would never trade with you. You see, every scar represents a person to whom I have given my love..... I tear out a piece of my heart and give it to them ... and often they give me a piece of their heart which fits into the empty place in my heart ... but because the pieces aren’t exact, I have some rough edges, which I cherish, because they remind me of the love we shared.</string>
+    <string name="story2_page3">Sometimes I have given pieces of my heart away ... and the other person hasn’t returned a piece of his heart to me. These are the empty gouges ... giving love is taking a chance. Although these gouges are painful, they stay open, reminding me of the love I have for these people too ... and I hope someday they may return and fill the space I have waiting.\n\nSo now do you see what true beauty is?”
+The young man stood silently with tears running down his cheeks. He walked up to the old man, reached into his perfect young and beautiful heart, and ripped a piece out. He offered it to the old man with trembling hands.
+The old man took his offering, placed it in his heart and then took a piece from his old scarred heart and placed it in the wound in the young man’s heart. It fit.... but not perfectly, as there were some jagged edges.</string>
+    <string name="story2_page4">The young man looked at his heart, not perfect anymore but more beautiful than ever, since love from the old man’s heart flowed into his. They embraced and walked away side by side.\n\nQuestion:\nWhat is the moral lesson of the story?</string>
+    <string name="story2_page5">Physical perfection is not always beautiful.</string>
+    <string name="story3_page1">The Pencil Maker took the pencil aside, just before putting him into the box.\n\n
+        \“There are 5 things you need to know,\” he told the pencil, \“Before I send you out into the world. Always remember them and never forget, and you will become the best pencil you can be.\”\n\n
+        One: \“You will be able to do many great things, but only if you allow yourself to be held in someone’s hand.\”\n\n
+        Two: \“You will experience a painful sharpening from time to time, but you’ll need it to become a better pencil.\”\n\n
+        Three: \“You will be able to correct any mistakes you might make.\”\n\n
+        Four: \“The most important part of you will always be what\'s inside.\”\n\nAnd 
+        Five: \“On every surface you are used on, you must leave your mark. No matter what the condition, you must continue to write.\”\n\n
+        The pencil understood and promised to remember, and went into the box with purpose in its heart.\n\n
+        Now replacing the place of the pencil with you. Always remember them and never forget, and you will become the best person you can be.</string>
+    <string name="story3_page2">    One: \“You will be able to do many great things, but only if you allow yourself to be held in God’s hand. And allow other human beings to access you for the many gifts you possess.\”\n\n
+	Two: \“You will experience a painful sharpening from time to time, by going through various problems in life, but you’ll need it to become a stronger person.\”\n\n
+	Three: \“You will be able to correct any mistakes you might make.\”\n\n
+	Four: \“The most important part of you will always be what’s on the inside.\”\n\n
+	And Five: \“On every surface you walk through, you must leave your mark. No matter what the situation, you must continue to do your duties.\”\n\n
+	Allow this parable on the pencil to encourage you to know that you are a special person and only you can fulfill the purpose to which you were born to accomplish.\n\n
+	Question:\nWhat is the moral lesson of the story?
+	</string>
+	<string name="story3_page3">Never allow yourself to get discouraged and think that your life is insignificant and cannot make a change.</string>
+    <string name="story1title">The Ant and the Grasshopper</string>
+    <string name="story2title">The Most Beautiful Heart</string>
+    <string name="story3title">Parable of the Pencil</string>
     <string name="happy">Happy</string>
     <string name="shy">Shy</string>
     <string name="surprised">Surprised</string>
@@ -37,7 +78,16 @@
     <string name="embarrassed">Embarrassed</string>
     <string name="bored">Bored</string>
     <string name="angry">Angry</string>
-    
+    <string name="help">Help</string>
+    <string name="sites">
+        http://techkiddie.com/\n
+        http://kiddie-party.com/\n
+        http://opendevsolutions.com\n\n
+        Credits:\n
+        All the author of the images\n
+        \u00A9 Copyright OpenDevSolutions 2014
+    </string>
+
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="abc">#fe3675</color>
@@ -49,7 +99,7 @@
     <color name="lessonText">#44d1ff</color>
     <color name="vowelBG">#0060f8</color>
     <color name="consonantBG">#ff92b3</color>
-    
+
     <string name="app_name">BrainGain</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>

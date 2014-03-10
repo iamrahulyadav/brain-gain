@@ -126,31 +126,35 @@ public class DirectionsFragmentActivity extends Activity implements
 
 		flipper = (ViewFlipper) findViewById(R.id.directionFlipper);
 
-//		ImageView up = (ImageView) findViewById(R.id.directionUp);
-//		ImageView down = (ImageView) findViewById(R.id.directionDown);
+		ImageView up = (ImageView) findViewById(R.id.directionUp);
+		ImageView down = (ImageView) findViewById(R.id.directionDown);
 		ImageView left = (ImageView) findViewById(R.id.directionLeft);
 		ImageView right = (ImageView) findViewById(R.id.directionRight);
 		ImageView back = (ImageView) findViewById(R.id.back_button);
 		ImageView home_l = (ImageView) findViewById(R.id.home_button_left);
 		ImageView home_r = (ImageView) findViewById(R.id.home_button_right);
+		ImageView home_u = (ImageView) findViewById(R.id.home_button_up);
+		ImageView home_d = (ImageView) findViewById(R.id.home_button_down);
 
-//		up.setOnClickListener(this);
-//		down.setOnClickListener(this);
+		up.setOnClickListener(this);
+		down.setOnClickListener(this);
 		left.setOnClickListener(this);
 		right.setOnClickListener(this);
 		back.setOnClickListener(this);
 		home_l.setOnClickListener(this);
 		home_r.setOnClickListener(this);
+		home_u.setOnClickListener(this);
+		home_d.setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-/*		case R.id.directionUp:
+		case R.id.directionUp:
 			flipper.setInAnimation(inFromUpAnimation());
 			flipper.setOutAnimation(outToDownAnimation());
 			flipper.setDisplayedChild(1);
-			break;*/
+			break;
 		case R.id.directionLeft:
 			flipper.setInAnimation(inFromLeftAnimation());
 			flipper.setOutAnimation(outToRightAnimation());
@@ -161,11 +165,11 @@ public class DirectionsFragmentActivity extends Activity implements
 			flipper.setOutAnimation(outToLeftAnimation());
 			flipper.setDisplayedChild(3);
 			break;
-/*		case R.id.directionDown:
+		case R.id.directionDown:
 			flipper.setInAnimation(inFromDownAnimation());
 			flipper.setOutAnimation(outToUpAnimation());
 			flipper.setDisplayedChild(4);
-			break;*/
+			break;
 		case R.id.home_button_right:
 			flipper.setInAnimation(inFromLeftAnimation());
 			flipper.setOutAnimation(outToRightAnimation());
@@ -174,6 +178,16 @@ public class DirectionsFragmentActivity extends Activity implements
 		case R.id.home_button_left:
 			flipper.setInAnimation(inFromRightAnimation());
 			flipper.setOutAnimation(outToLeftAnimation());
+			flipper.setDisplayedChild(0);
+			break;
+		case R.id.home_button_up:
+			flipper.setInAnimation(inFromDownAnimation());
+			flipper.setOutAnimation(outToUpAnimation());
+			flipper.setDisplayedChild(0);
+			break;
+		case R.id.home_button_down:
+			flipper.setInAnimation(inFromUpAnimation());
+			flipper.setOutAnimation(outToDownAnimation());
 			flipper.setDisplayedChild(0);
 			break;
 		case R.id.back_button:
