@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -192,11 +193,18 @@ public class QuizActivity extends Activity implements OnClickListener {
 	}
 
 	public void showResult() {
+		RatingBar rb = new RatingBar(this);
+		float rating = (float) cAnswers;
+		rb.setRating(rating);
 		resultBuilder = new AlertDialog.Builder(this);
-		resultBuilder.setTitle("SCORE");
+		resultBuilder.setTitle(eval.evaluate(cAnswers, itemLimit));
 		resultBuilder.setIcon(R.drawable.ic_launcher);
-		resultBuilder.setMessage("Score: " + cAnswers + "/" + itemLimit + "\n"
-				+ eval.evaluate(cAnswers, itemLimit));
+		resultBuilder.setView(rb);
+		if(eval.evaluate(cAnswers, itemLimit) == "Fail"){
+			resultBuilder.setMessage("Please review and try again.");
+		}else{
+			
+		}
 		resultBuilder.setPositiveButton("OK",
 				new DialogInterface.OnClickListener() {
 					@Override

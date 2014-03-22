@@ -42,7 +42,7 @@
                 android:id="@+id/ag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ant_grashopper" />
+                android:src="@drawable/first_1" />
         </TableRow>
 
         <TableRow
@@ -56,7 +56,7 @@
                 android:id="@+id/heart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/heart_story" />
+                android:src="@drawable/second_3" />
         </TableRow>
 
         <TableRow
@@ -70,7 +70,7 @@
                 android:id="@+id/pencil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/pencil" />
+                android:src="@drawable/third_1" />
         </TableRow>
     </TableLayout>
 
