@@ -1,11 +1,15 @@
 package com.opendevsolutions.abc;
 
+import java.io.IOException;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
 import android.graphics.Typeface;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.AccelerateInterpolator;
@@ -15,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.opendevsolutions.braingain.MainActivity;
 import com.opendevsolutions.braingain.R;
 import com.opendevsolutions.quiz.lib.QuizActivity;
 
@@ -32,6 +37,7 @@ public class ABCFirstFragmentActivity extends Activity implements
 	private static String QName = "ABC Part 1";
 
 	private static QuizActivity quiz_act = new QuizActivity();
+	private MainActivity main = new MainActivity();
 
 	private Animation inFromRightAnimation() {
 
@@ -76,6 +82,43 @@ public class ABCFirstFragmentActivity extends Activity implements
 		outtoRight.setDuration(300);
 		outtoRight.setInterpolator(new AccelerateInterpolator());
 		return outtoRight;
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		AssetFileDescriptor afd = this.getResources().openRawResourceFd(
+				R.raw.bg_track);
+		try {
+			main.bgMusic.reset();
+			main.bgMusic.setDataSource(afd.getFileDescriptor(),
+					afd.getStartOffset(), afd.getDeclaredLength());
+			main.bgMusic.prepare();
+			main.bgMusic.setLooping(true);
+			main.bgMusic.start();
+			afd.close();
+		} catch (IllegalArgumentException e) {
+			Log.e("error: ",
+					"Unable to play audio queue do to exception: "
+							+ e.getMessage(), e);
+		} catch (IllegalStateException e) {
+			Log.e("error: ",
+					"Unable to play audio queue do to exception: "
+							+ e.getMessage(), e);
+		} catch (IOException e) {
+			Log.e("error: ",
+					"Unable to play audio queue do to exception: "
+							+ e.getMessage(), e);
+		}
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+
+		if (main.bgMusic.isPlaying()) {
+			main.bgMusic.stop();
+		}
 	}
 
 	@Override

@@ -1,14 +1,19 @@
 package com.opendevsolutions.abc;
 
+import java.io.IOException;
+
+import com.opendevsolutions.braingain.MainActivity;
 import com.opendevsolutions.braingain.R;
 import com.opendevsolutions.quiz.lib.QuizActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
 import android.graphics.Typeface;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.AccelerateInterpolator;
@@ -16,6 +21,7 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 public class ABCSecondFragmentActivity extends Activity implements
@@ -30,6 +36,8 @@ public class ABCSecondFragmentActivity extends Activity implements
 	private static View textViews;
 	private static String alpha_second = "alphabet_second.xml";
 	private static String QName = "ABC Part 2";
+	
+	private MainActivity main = new MainActivity();
 
 	private Animation inFromRightAnimation() {
 
@@ -74,6 +82,43 @@ public class ABCSecondFragmentActivity extends Activity implements
 		outtoRight.setDuration(300);
 		outtoRight.setInterpolator(new AccelerateInterpolator());
 		return outtoRight;
+	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		AssetFileDescriptor afd = this.getResources().openRawResourceFd(
+				R.raw.bg_track);
+		try {
+			main.bgMusic.reset();
+			main.bgMusic.setDataSource(afd.getFileDescriptor(),
+					afd.getStartOffset(), afd.getDeclaredLength());
+			main.bgMusic.prepare();
+			main.bgMusic.setLooping(true);
+			main.bgMusic.start();
+			afd.close();
+		} catch (IllegalArgumentException e) {
+			Log.e("error: ",
+					"Unable to play audio queue do to exception: "
+							+ e.getMessage(), e);
+		} catch (IllegalStateException e) {
+			Log.e("error: ",
+					"Unable to play audio queue do to exception: "
+							+ e.getMessage(), e);
+		} catch (IOException e) {
+			Log.e("error: ",
+					"Unable to play audio queue do to exception: "
+							+ e.getMessage(), e);
+		}
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		if(main.bgMusic.isPlaying()){
+			main.bgMusic.stop();
+		}
 	}
 
 	@Override
