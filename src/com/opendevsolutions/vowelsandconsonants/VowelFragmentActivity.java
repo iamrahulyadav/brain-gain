@@ -6,6 +6,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Typeface;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,6 +32,9 @@ public class VowelFragmentActivity extends Activity implements OnClickListener {
 	private static View textViews;
 	private static String quiz_name = "vowels.xml";
 	private static String QName = "Vowel";
+	
+	private static SoundPool sp;
+	private static int click = 0;
 
 	private static QuizActivity quiz_act = new QuizActivity();
 	private MainActivity main = new MainActivity();
@@ -171,6 +176,9 @@ public class VowelFragmentActivity extends Activity implements OnClickListener {
 
 		yes.setOnClickListener(this);
 		no.setOnClickListener(this);
+		
+		sp = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+		click = sp.load(this, R.raw.click, 1);
 
 	}
 
@@ -178,6 +186,7 @@ public class VowelFragmentActivity extends Activity implements OnClickListener {
 	public void onClick(View mView) {
 		switch (mView.getId()) {
 		case R.id.arrow_left:
+			sp.play(click, 1, 1, 0, 0, 1);
 			displayChild = flipper.getDisplayedChild();
 			if (displayChild == 0) {
 				flipper.stopFlipping();
@@ -188,6 +197,7 @@ public class VowelFragmentActivity extends Activity implements OnClickListener {
 			}
 			break;
 		case R.id.yes:
+			sp.play(click, 1, 1, 0, 0, 1);
 			changeTextBG(mView);
 			quiz_act.setFileName(quiz_name);
 			quiz_act.setQuizName(QName);
@@ -196,6 +206,7 @@ public class VowelFragmentActivity extends Activity implements OnClickListener {
 			this.finish();
 			break;
 		case R.id.no:
+			sp.play(click, 1, 1, 0, 0, 1);
 			textViews = mView;
 			changeTextBG(mView);
 			new Thread(myThread).start();
@@ -204,6 +215,7 @@ public class VowelFragmentActivity extends Activity implements OnClickListener {
 			flipper.setDisplayedChild(0);
 			break;
 		case R.id.arrow_right:
+			sp.play(click, 1, 1, 0, 0, 1);
 			displayChild = flipper.getDisplayedChild();
 			if (displayChild == childCount - 1) {
 				flipper.stopFlipping();
@@ -214,6 +226,7 @@ public class VowelFragmentActivity extends Activity implements OnClickListener {
 			}
 			break;
 		case R.id.back_button:
+			sp.play(click, 1, 1, 0, 0, 1);
 			super.onBackPressed();
 			break;
 		}

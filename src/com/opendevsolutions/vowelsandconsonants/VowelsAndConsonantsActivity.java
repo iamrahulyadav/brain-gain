@@ -3,6 +3,8 @@ package com.opendevsolutions.vowelsandconsonants;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,6 +16,9 @@ import com.opendevsolutions.braingain.R;
 public class VowelsAndConsonantsActivity extends Activity implements
 		OnClickListener {
 
+	private static SoundPool sp;
+	private static int click = 0;
+	
 	@Override
 	public void onBackPressed() {
 
@@ -42,20 +47,26 @@ public class VowelsAndConsonantsActivity extends Activity implements
 		back.setOnClickListener(this);
 		vowel.setOnClickListener(this);
 		consonant.setOnClickListener(this);
+		
+		sp = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+		click = sp.load(this, R.raw.click, 1);
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.vowels:
+			sp.play(click, 1, 1, 0, 0, 1);
 			Intent vowel = new Intent(this, VowelFragmentActivity.class);
 			startActivity(vowel);
 			break;
 		case R.id.consonants:
+			sp.play(click, 1, 1, 0, 0, 1);
 			Intent consonant = new Intent(this, ConsonantFragmentActivity.class);
 			startActivity(consonant);
 			break;
 		case R.id.back_button:
+			sp.play(click, 1, 1, 0, 0, 1);
 			super.onBackPressed();
 			break;
 		}

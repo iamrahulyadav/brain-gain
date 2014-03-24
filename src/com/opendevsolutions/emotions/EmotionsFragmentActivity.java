@@ -3,6 +3,8 @@ package com.opendevsolutions.emotions;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -26,6 +28,9 @@ public class EmotionsFragmentActivity extends Activity implements
 	private static View textViews;
 	private static String quiz_file = "emotions.xml";
 	private static String QName = "Emotion";
+	
+	private static SoundPool sp;
+	private static int click = 0;
 
 	private static QuizActivity quiz_act = new QuizActivity();
 
@@ -105,6 +110,9 @@ public class EmotionsFragmentActivity extends Activity implements
 
 		yes.setOnClickListener(this);
 		no.setOnClickListener(this);
+		
+		sp = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+		click = sp.load(this, R.raw.click, 1);
 	}
 
 	private Runnable myThread = new Runnable() {
@@ -135,6 +143,7 @@ public class EmotionsFragmentActivity extends Activity implements
 	public void onClick(View mView) {
 		switch (mView.getId()) {
 		case R.id.arrow_left:
+			sp.play(click, 1, 1, 0, 0, 1);
 			displayChild = flipper.getDisplayedChild();
 			if (displayChild == 0) {
 				flipper.stopFlipping();
@@ -145,6 +154,7 @@ public class EmotionsFragmentActivity extends Activity implements
 			}
 			break;
 		case R.id.arrow_right:
+			sp.play(click, 1, 1, 0, 0, 1);
 			displayChild = flipper.getDisplayedChild();
 			if (displayChild == childCount - 1) {
 				flipper.stopFlipping();
@@ -155,6 +165,7 @@ public class EmotionsFragmentActivity extends Activity implements
 			}
 			break;
 		case R.id.yes:
+			sp.play(click, 1, 1, 0, 0, 1);
 			changeTextBG(mView);
 			quiz_act.setFileName(quiz_file);
 			quiz_act.setQuizName(QName);
@@ -163,6 +174,7 @@ public class EmotionsFragmentActivity extends Activity implements
 			this.finish();
 			break;
 		case R.id.no:
+			sp.play(click, 1, 1, 0, 0, 1);
 			textViews = mView;
 			changeTextBG(mView);
 			new Thread(myThread).start();
@@ -171,6 +183,7 @@ public class EmotionsFragmentActivity extends Activity implements
 			flipper.setDisplayedChild(0);
 			break;
 		case R.id.back_button:
+			sp.play(click, 1, 1, 0, 0, 1);
 			super.onBackPressed();
 			break;
 		}

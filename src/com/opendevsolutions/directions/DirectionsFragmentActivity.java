@@ -2,6 +2,8 @@ package com.opendevsolutions.directions;
 
 import android.app.Activity;
 import android.graphics.Typeface;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,6 +22,8 @@ public class DirectionsFragmentActivity extends Activity implements
 	private int displayChild;
 	private ViewFlipper flipper;
 	public static int display;
+	private static SoundPool sp;
+	private static int click = 0;
 
 	private Animation inFromRightAnimation() {
 
@@ -145,52 +149,64 @@ public class DirectionsFragmentActivity extends Activity implements
 		home_r.setOnClickListener(this);
 		home_u.setOnClickListener(this);
 		home_d.setOnClickListener(this);
+		
+		sp = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+		click = sp.load(this, R.raw.click, 1);
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.directionUp:
+			sp.play(click, 1, 1, 0, 0, 1);
 			flipper.setInAnimation(inFromUpAnimation());
 			flipper.setOutAnimation(outToDownAnimation());
 			flipper.setDisplayedChild(1);
 			break;
 		case R.id.directionLeft:
+			sp.play(click, 1, 1, 0, 0, 1);
 			flipper.setInAnimation(inFromLeftAnimation());
 			flipper.setOutAnimation(outToRightAnimation());
 			flipper.setDisplayedChild(2);
 			break;
 		case R.id.directionRight:
+			sp.play(click, 1, 1, 0, 0, 1);
 			flipper.setInAnimation(inFromRightAnimation());
 			flipper.setOutAnimation(outToLeftAnimation());
 			flipper.setDisplayedChild(3);
 			break;
 		case R.id.directionDown:
+			sp.play(click, 1, 1, 0, 0, 1);
 			flipper.setInAnimation(inFromDownAnimation());
 			flipper.setOutAnimation(outToUpAnimation());
 			flipper.setDisplayedChild(4);
 			break;
 		case R.id.home_button_right:
+			sp.play(click, 1, 1, 0, 0, 1);
 			flipper.setInAnimation(inFromLeftAnimation());
 			flipper.setOutAnimation(outToRightAnimation());
 			flipper.setDisplayedChild(0);
 			break;
 		case R.id.home_button_left:
+			sp.play(click, 1, 1, 0, 0, 1);
 			flipper.setInAnimation(inFromRightAnimation());
 			flipper.setOutAnimation(outToLeftAnimation());
 			flipper.setDisplayedChild(0);
 			break;
 		case R.id.home_button_up:
+			sp.play(click, 1, 1, 0, 0, 1);
 			flipper.setInAnimation(inFromDownAnimation());
 			flipper.setOutAnimation(outToUpAnimation());
 			flipper.setDisplayedChild(0);
 			break;
 		case R.id.home_button_down:
+			sp.play(click, 1, 1, 0, 0, 1);
 			flipper.setInAnimation(inFromUpAnimation());
 			flipper.setOutAnimation(outToDownAnimation());
 			flipper.setDisplayedChild(0);
 			break;
 		case R.id.back_button:
+			sp.play(click, 1, 1, 0, 0, 1);
 			super.onBackPressed();
 			break;
 		}

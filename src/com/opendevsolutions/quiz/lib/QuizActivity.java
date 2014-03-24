@@ -12,6 +12,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -40,6 +42,9 @@ public class QuizActivity extends Activity implements OnClickListener {
 	public RadioGroup rgrp;
 	public TextView tvQ;
 	public ImageView mImage;
+	
+	private static SoundPool sp;
+	private static int click = 0;
 
 	private static String filename;
 	int itemLimit = 5;
@@ -69,6 +74,9 @@ public class QuizActivity extends Activity implements OnClickListener {
 		Button ok = (Button) findViewById(R.id.btn_next);
 		ok.setOnClickListener(this);
 		mImage = (ImageView) findViewById(R.id.quiz_image);
+		
+		sp = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+		click = sp.load(this, R.raw.click, 1);
 	}
 
 	@Override
@@ -81,6 +89,7 @@ public class QuizActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.btn_next:
+			sp.play(click, 1, 1, 0, 0, 1);
 			String selected = getChoiceFromRadioButton();
 			String answer = quiz.getAnswer(itemIndex);
 
@@ -209,6 +218,7 @@ public class QuizActivity extends Activity implements OnClickListener {
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
+						sp.play(click, 1, 1, 0, 0, 1);
 						saveDataToDB(getQuizName(), cAnswers);
 						resultDialog.dismiss();
 						backToMenu();

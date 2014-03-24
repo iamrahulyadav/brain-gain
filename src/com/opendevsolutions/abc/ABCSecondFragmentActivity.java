@@ -37,6 +37,8 @@ public class ABCSecondFragmentActivity extends Activity implements
 	private static String alpha_second = "alphabet_second.xml";
 	private static String QName = "ABC Part 2";
 	
+	private static int click = 0;
+	
 	private MainActivity main = new MainActivity();
 
 	private Animation inFromRightAnimation() {
@@ -144,6 +146,8 @@ public class ABCSecondFragmentActivity extends Activity implements
 		x = sp.load(this, R.raw.x, 1);
 		y = sp.load(this, R.raw.y, 1);
 		z = sp.load(this, R.raw.z, 1);
+		
+		click = sp.load(this, R.raw.click, 1);
 
 		TextView lesson = (TextView) findViewById(R.id.alphabetTitle);
 		Typeface typeface = Typeface.createFromAsset(getAssets(),
@@ -266,6 +270,7 @@ public class ABCSecondFragmentActivity extends Activity implements
 			sp.play(z, 1, 1, 0, 0, 1);
 			break;
 		case R.id.yes:
+			sp.play(click, 1, 1, 0, 0, 1);
 			changeTextBG(mView);
 			quiz_act.setFileName(alpha_second);
 			quiz_act.setQuizName(QName);
@@ -274,6 +279,7 @@ public class ABCSecondFragmentActivity extends Activity implements
 			this.finish();
 			break;
 		case R.id.no:
+			sp.play(click, 1, 1, 0, 0, 1);
 			textViews = mView;
 			changeTextBG(mView);
 			new Thread(myThread).start();
@@ -282,6 +288,7 @@ public class ABCSecondFragmentActivity extends Activity implements
 			flipper.setDisplayedChild(0);
 			break;
 		case R.id.arrow_left:
+			sp.play(click, 1, 1, 0, 0, 1);
 			displayChild = flipper.getDisplayedChild();
 			if (displayChild == 0) {
 				flipper.stopFlipping();
@@ -292,6 +299,7 @@ public class ABCSecondFragmentActivity extends Activity implements
 			}
 			break;
 		case R.id.arrow_right:
+			sp.play(click, 1, 1, 0, 0, 1);
 			displayChild = flipper.getDisplayedChild();
 			if (displayChild == childCount - 1) {
 				flipper.stopFlipping();
@@ -302,6 +310,7 @@ public class ABCSecondFragmentActivity extends Activity implements
 			}
 			break;
 		case R.id.back_button:
+			sp.play(click, 1, 1, 0, 0, 1);
 			super.onBackPressed();
 			break;
 		}

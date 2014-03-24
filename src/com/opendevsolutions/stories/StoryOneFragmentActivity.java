@@ -1,6 +1,8 @@
 package com.opendevsolutions.stories;
 
 import android.app.Activity;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,6 +20,9 @@ public class StoryOneFragmentActivity extends Activity implements
 	private int displayChild;
 	private int childCount;
 	private ViewFlipper flipper;
+	
+	private static SoundPool sp;
+	private static int click = 0;
 	
 	private Animation inFromRightAnimation() {
 
@@ -84,12 +89,16 @@ public class StoryOneFragmentActivity extends Activity implements
 		left.setOnClickListener(this);
 		right.setOnClickListener(this);
 		home.setOnClickListener(this);
+		
+		sp = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+		click = sp.load(this, R.raw.click, 1);
 	}
 
 	@Override
 	public void onClick(View mView) {
 		switch(mView.getId()){
 		case R.id.arrow_left:
+			sp.play(click, 1, 1, 0, 0, 1);
 			displayChild = flipper.getDisplayedChild();
 			if (displayChild == 0) {
 				flipper.stopFlipping();
@@ -100,6 +109,7 @@ public class StoryOneFragmentActivity extends Activity implements
 			}
 			break;
 		case R.id.arrow_right:
+			sp.play(click, 1, 1, 0, 0, 1);
 			displayChild = flipper.getDisplayedChild();
 			if (displayChild == childCount - 1) {
 				flipper.stopFlipping();
@@ -110,6 +120,7 @@ public class StoryOneFragmentActivity extends Activity implements
 			}
 			break;
 		case R.id.home_button:
+			sp.play(click, 1, 1, 0, 0, 1);
 			this.finish();
 			break;
 		}
