@@ -23,10 +23,10 @@ public class QuizEvaluation {
 			return "Good";
 		} else if (p >= 75) {
 			Log.i("PERCENTAGE", "" + "FAIR");
-			return "Fair";
+			return "Good";
 		}
 		Log.i("PERCENTAGE", "" + "FAIL");
-		return "Fail";
+		return "Fair";
 	}
 	
 }
